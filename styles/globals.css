@@ -1,16 +1,24 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	@apply overflow-x-hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.hide-scrollbar::-webkit-scrollbar {
+	@apply hidden;
+}
+.hide-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
-* {
-  box-sizing: border-box;
+._divider {
+	@apply flex flex-row before:mr-10 after:ml-10 !important;
+}
+._divider:before,
+._divider:after {
+	flex: 1 1;
+	@apply content-[''] border-b m-auto;
 }
