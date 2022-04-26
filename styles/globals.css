@@ -22,3 +22,10 @@ body {
 	flex: 1 1;
 	@apply content-[''] border-b m-auto;
 }
+
+details summary {
+	@apply list-none;
+}
+details summary::-webkit-details-marker {
+	@apply hidden;
+}

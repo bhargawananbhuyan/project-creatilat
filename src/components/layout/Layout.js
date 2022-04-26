@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
 							<Link href='/'>
 								<a>Como funciona</a>
 							</Link>
-							<Link href='/'>
+							<Link href='/contacto'>
 								<a>Contacto</a>
 							</Link>
 						</nav>
@@ -71,7 +71,9 @@ const Layout = ({ children }) => {
 						<section className='grid gap-3.5'>
 							<h1 className='font-bold'>AYUDA</h1>
 							<div className='grid gap-2'>
-								<div>Preguntas frecuentes</div>
+								<Link href='/preguntas-frecuentes'>
+									<a>Preguntas frecuentes</a>
+								</Link>
 								<div>Guías y sugerencias</div>
 							</div>
 						</section>
@@ -79,8 +81,12 @@ const Layout = ({ children }) => {
 						<section className='flex-shrink-0 grid gap-3.5'>
 							<h1 className='font-bold'>LEGAL</h1>
 							<div className='grid gap-2'>
-								<div>Políticas de Privacidad</div>
-								<div>Términos y Condiciones</div>
+								<Link href='/politicas-de-privacidad'>
+									<a>Políticas de Privacidad</a>
+								</Link>
+								<Link href='/terminos-y-condiciones'>
+									<a>Términos y Condiciones</a>
+								</Link>
 							</div>
 						</section>
 
