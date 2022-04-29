@@ -29,3 +29,10 @@ details summary {
 details summary::-webkit-details-marker {
 	@apply hidden;
 }
+
+/* styles for productos */
+.productos__grid {
+	@apply grid gap-x-14 gap-y-20 pt-20 pb-24;
+	grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+	grid-auto-rows: 275px;
+}

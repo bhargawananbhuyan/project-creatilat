@@ -52,6 +52,10 @@ export default function Home() {
 					</div>
 
 					<div className='mt-32'>
+						<div className='flex items-center justify-end gap-3.5 mb-5 text-blue-500'>
+							<h1 className='mb-1'>Ver más</h1>
+							<FontAwesomeIcon icon={faArrowRight} />
+						</div>
 						<div
 							className='flex gap-10 overflow-x-scroll hide-scrollbar scroll-smooth'
 							ref={vermasRef}
@@ -70,6 +74,7 @@ export default function Home() {
 									<FontAwesomeIcon icon={faArrowRight} />
 								</button>
 							</div>
+
 							{Array.from(Array(10).keys()).map((i) => (
 								<div
 									key={i}

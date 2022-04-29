@@ -1,0 +1,20 @@
+.paquetes-wrapper {
+	@apply grid py-14 gap-x-5;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.paquetes-wrapper .paquetes-card {
+	@apply grid place-items-center p-5 shadow-xl rounded gap-5;
+}
+
+.paquetes-wrapper .paquetes-icon-titles {
+	@apply grid gap-2.5;
+}
+
+.paquetes-wrapper .paquetes-icon-titles div {
+	@apply flex items-center gap-2.5;
+}
+
+.paquetes-wrapper .paquetes-icon-titles span {
+	@apply text-sm;
+}

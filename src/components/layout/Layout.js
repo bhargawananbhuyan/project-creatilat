@@ -33,16 +33,16 @@ const Layout = ({ children }) => {
 						</Link>
 						{/* desktop navigation */}
 						<nav className='flex gap-10 font-semibold'>
-							<Link href='/'>
+							<Link href='/productos'>
 								<a>Productos</a>
 							</Link>
-							<Link href='/'>
+							<Link href='/paquetes'>
 								<a>Paquetes</a>
 							</Link>
-							<Link href='/'>
+							<Link href='/premium'>
 								<a>Premium</a>
 							</Link>
-							<Link href='/'>
+							<Link href='/como-funciona'>
 								<a>Como funciona</a>
 							</Link>
 							<Link href='/contacto'>
@@ -98,9 +98,9 @@ const Layout = ({ children }) => {
 							</div>
 						</section>
 
-						<section className='flex-shrink-0 grid gap-3.5 w-[400px]'>
+						<section className='flex-shrink-0 grid gap-3.5'>
 							<h1 className='font-bold'>SÍGUENOS EN REDES SOCIALES</h1>
-							<div className='text-2xl flex flex-wrap gap-5'>
+							<div className='text-xl flex flex-wrap gap-5'>
 								<FontAwesomeIcon icon={faFacebookF} />
 								<FontAwesomeIcon icon={faInstagram} />
 								<FontAwesomeIcon icon={faYoutube} />
