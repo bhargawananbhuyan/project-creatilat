@@ -10,6 +10,7 @@ import axios from 'axios'
 import makeLink from '../../src/utils/makeLink'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import { productos as _productos } from '../../src/utils/data'
 
 const titleRoutes = [
 	'logo-e-identidad',
@@ -52,14 +53,6 @@ export default function Slug({ productos, producto }) {
 	const isRoute = (title) => title?.toLowerCase().split(' ').join('-') === slug
 	const _pageTitle = slug?.split('-').join(' ')
 
-	const colors = {
-		bronce: '#E0B48C',
-		plata: '#B6B5B3',
-		oro: '#E8B954',
-		premium: '#29675B',
-		platino: '#303030',
-	}
-
 	return (
 		<Layout>
 			<SEO title={`Productos: ${_pageTitle || 'loading...'}`} />
@@ -93,9 +86,9 @@ export default function Slug({ productos, producto }) {
 							<div className='grid gap-10'>
 								<section className='grid gap-5'>
 									<h1 className='text-5xl font-bold text-[#9419E8] underline underline-offset-[5px]'>
-										{producto.title}
+										{producto?.title}
 									</h1>
-									<p className='leading-relaxed'>{producto.description}</p>
+									<p className='leading-relaxed'>{producto?.description}</p>
 								</section>
 								<div className='flex items-center gap-3.5'>
 									<button className='bg-gradient-to-r from-[#881CFD] to-[#A514CD] px-7 py-3.5 font-semibold text-white rounded-full'>
@@ -134,7 +127,7 @@ export default function Slug({ productos, producto }) {
 								</div>
 							</section>
 
-							{producto.precio?.map((_item, i) => (
+							{producto?.precio?.map((_item, i) => (
 								<section
 									key={i}
 									className={`rounded-t-md overflow-hidden shadow-[0px_0px_15px_-5px_rgba(0,0,0,.25)] ${
@@ -192,10 +185,7 @@ export default function Slug({ productos, producto }) {
 }
 
 export const getStaticPaths = async () => {
-	const res = await axios.get('http://localhost:3000/api/productos')
-	const productos = res.data?.data
-
-	const paths = productos.map((p) => ({ params: { slug: makeLink(p.title) } }))
+	const paths = _productos.map((p) => ({ params: { slug: makeLink(p.title) } }))
 
 	return {
 		paths,
@@ -204,20 +194,17 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async (ctx) => {
-	const res = await axios.get('http://localhost:3000/api/productos')
-	const productos = res.data?.data
-
-	if (productos?.filter((p) => makeLink(p.title) === ctx.params.slug).length > 0) {
+	if (_productos?.filter((p) => makeLink(p.title) === ctx.params.slug).length > 0) {
 		return {
 			props: {
-				producto: productos?.filter((p) => makeLink(p.title) === ctx.params.slug)[0],
+				producto: _productos?.filter((p) => makeLink(p.title) === ctx.params.slug)[0],
 			},
 		}
 	}
 
 	return {
 		props: {
-			productos,
+			productos: _productos,
 		},
 	}
 }

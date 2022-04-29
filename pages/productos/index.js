@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { useRouter } from 'next/router'
 import React from 'react'
 import InputField from '../../src/components/layout/InputField'
@@ -6,8 +5,9 @@ import Layout from '../../src/components/layout/Layout'
 import SEO from '../../src/components/layout/SEO'
 import Productos from '../../src/components/productos/Productos'
 import ProductosHeader from '../../src/components/productos/ProductosHeader'
+import { productos } from '../../src/utils/data'
 
-export default function Index({ productos }) {
+export default function Index() {
 	const router = useRouter()
 	const { slug } = router.query
 	const isRoute = (title) => title?.toLowerCase().split(' ').join('-') === slug
@@ -30,15 +30,4 @@ export default function Index({ productos }) {
 			<Productos productos={productos} />
 		</Layout>
 	)
-}
-
-export const getStaticProps = async () => {
-	const res = await axios.get('http://localhost:3000/api/productos')
-	const productos = res.data?.data
-
-	return {
-		props: {
-			productos,
-		},
-	}
 }
