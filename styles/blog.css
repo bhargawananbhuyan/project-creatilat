@@ -1,0 +1,37 @@
+.blogGridOne {
+	@apply grid max-w-screen-lg mx-auto gap-8;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-auto-rows: 400px;
+}
+
+.blogGridTwo {
+	@apply grid max-w-screen-lg mx-auto gap-8;
+	grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+	grid-auto-rows: 400px;
+}
+
+.blogCard {
+	@apply shadow-xl rounded overflow-hidden bg-white hover:shadow transition-all;
+}
+
+.blogCardImg {
+	@apply h-[250px] w-full bg-gray-300;
+}
+
+.blogCardBody {
+	@apply h-[150px] grid items-center;
+}
+.blogCardBody div {
+	@apply grid gap-2.5 px-5;
+}
+
+.pagination {
+	@apply max-w-screen-lg mx-auto flex justify-center my-16 gap-x-2;
+}
+
+.pagination button {
+	@apply h-[35px] w-[35px] grid place-items-center rounded-sm;
+}
+.pagination button:first-child {
+	@apply bg-black text-white;
+}

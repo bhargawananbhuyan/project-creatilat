@@ -2,7 +2,7 @@ const InputField = ({ type = 'input', placeholder, additionalClasses = '', ...re
 	type === 'textarea' ? (
 		<textarea
 			placeholder={placeholder}
-			className={`w-full bg-gray-100 border-2 border-transparent focus:border-2 focus:border-blue-300 
+			className={`w-full bg-gray-100 border-2 border-transparent focus:border-2 focus:border-blue-300 focus:bg-gray-50
                 px-5 py-3 rounded-md outline-none resize-none ${additionalClasses}`}
 			rows={3}
 			{...rest}
@@ -11,7 +11,7 @@ const InputField = ({ type = 'input', placeholder, additionalClasses = '', ...re
 		<input
 			placeholder={placeholder}
 			className={`w-full border-2 border-transparent bg-gray-100 px-5 py-3 rounded-md outline-none 
-                focus:border-2 focus:border-blue-300 ${additionalClasses}`}
+                focus:border-2 focus:border-blue-300 focus:bg-gray-50 transition-all ${additionalClasses}`}
 			{...rest}
 		/>
 	)
