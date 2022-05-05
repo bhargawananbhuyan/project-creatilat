@@ -43,7 +43,7 @@ function MultiProductCarousel() {
 	}, [embla, onSelect, setScrollSnaps])
 
 	return (
-		<div className='grid gap-y-10'>
+		<div className='grid gap-y-10 px-10 sm:px-0'>
 			<div className='absolute items-center left-0 w-full h-[420px] flex justify-between'>
 				<button
 					className='h-[48px] w-[48px] bg-green-600 text-white z-[100] cursor-pointer'
@@ -85,7 +85,7 @@ function MultiProductCarousel() {
 					].map((item, i) => (
 						<div
 							key={i}
-							className='h-[420px] bg-gray-100 flex-shrink-0 relative mr-10 flex-[0_0_25%]'
+							className='h-[420px] bg-gray-100 flex-shrink-0 relative mr-10 flex-[0_0_100%] sm:flex-[0_0_25%]'
 						>
 							<Image
 								src={`/assets/slide-${i + 1}.jpg`}

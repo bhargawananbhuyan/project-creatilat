@@ -40,6 +40,7 @@ const CircularCarousel = () => {
 								layout='fill'
 								className='object-contain'
 								alt=''
+								loading='eager'
 							/>
 						</div>
 					))}
