@@ -1,29 +1,20 @@
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Image from 'next/image'
 import React from 'react'
+import CircularCarousel from '../src/components/carousels/CircularCarousel'
+import MultiProductCarousel from '../src/components/carousels/MultiProductCarousel'
 import Layout from '../src/components/layout/Layout'
 import SEO from '../src/components/layout/SEO'
 
 export default function Home() {
-	const vermasRef = React.useRef()
-
-	const handleLeftClick = () => {
-		if (vermasRef.current) vermasRef.current.scrollLeft -= 100
-	}
-	const handleRightClick = () => {
-		if (vermasRef.current) vermasRef.current.scrollLeft += 100
-	}
-
 	return (
 		<>
 			<SEO />
 			<Layout>
 				<div className='max-w-screen-xl mx-auto'>
 					<div className='flex items-center justify-between mt-10'>
-						<div
-							id='landing-hero-carousel'
-							className='w-[450px] h-[450px] bg-gray-200 rounded-full'
-						/>
+						<CircularCarousel />
 
 						<section className='grid gap-5'>
 							<h1
@@ -56,36 +47,7 @@ export default function Home() {
 							<h1 className='mb-1'>Ver más</h1>
 							<FontAwesomeIcon icon={faArrowRight} />
 						</div>
-						<div
-							className='flex gap-10 overflow-x-scroll hide-scrollbar scroll-smooth'
-							ref={vermasRef}
-						>
-							<div className='h-[420px] w-full absolute z-[0] left-0 flex items-center justify-between'>
-								<button
-									className='h-[48px] w-[48px] bg-green-600 text-white z-[100] cursor-pointer'
-									onClick={handleLeftClick}
-								>
-									<FontAwesomeIcon icon={faArrowLeft} />
-								</button>
-								<button
-									className='h-[48px] w-[48px] bg-green-600 text-white z-[100] cursor-pointer'
-									onClick={handleRightClick}
-								>
-									<FontAwesomeIcon icon={faArrowRight} />
-								</button>
-							</div>
-
-							{Array.from(Array(10).keys()).map((i) => (
-								<div
-									key={i}
-									className='w-[250px] h-[420px] bg-gray-200 flex-shrink-0 relative'
-								>
-									<strong className='absolute bottom-5 left-5 font-normal bg-gray-500 px-5 py-1.5 rounded-full text-white'>
-										Logotipos
-									</strong>
-								</div>
-							))}
-						</div>
+						<MultiProductCarousel />
 					</div>
 
 					<div className='max-w-screen-lg mx-auto mt-32'>
@@ -108,7 +70,14 @@ export default function Home() {
 								</p>
 							</section>
 
-							<div className='h-[350px] w-full bg-gray-200' />
+							<div className='h-[350px] w-full bg-gray-100 relative'>
+								<Image
+									src={'/assets/homepage-2.jpg'}
+									layout='fill'
+									className='absolute object-cover'
+									alt=''
+								/>
+							</div>
 						</section>
 
 						<div className='grid place-items-center mt-10'>
@@ -128,7 +97,14 @@ export default function Home() {
 							className='grid place-items-center gap-5'
 							style={{ gridColumn: '1' }}
 						>
-							<div className='h-[275px] w-full bg-gray-200' />
+							<div className='h-[275px] w-full bg-gray-200 relative'>
+								<Image
+									src={'/assets/homepage-3.jpg'}
+									layout='fill'
+									className='absolute object-cover'
+									alt=''
+								/>
+							</div>
 							<section className='grid place-items-center max-w-xl text-center gap-5'>
 								<h5 className='text-xl font-bold text-blue-500'>
 									Tendencias en diseño 2022
@@ -155,11 +131,19 @@ export default function Home() {
 							<section className='grid gap-5'>
 								{Array.from(Array(3).keys()).map((i) => (
 									<section key={i} className='flex items-center gap-5'>
-										<div className='w-[160px] h-[130px] bg-gray-200 flex-shrink-0' />
+										<div className='w-[160px] h-[130px] bg-gray-200 flex-shrink-0 relative'>
+											<Image
+												src={`/assets/homepage-${i + 4}.jpg`}
+												layout='fill'
+												className='absolute object-cover'
+												alt=''
+											/>
+										</div>
 										<p>
 											Lorem Ipsum is simply dummy text of the printing and
 											typesetting industry. Lorem Ipsum has been the
-											industry’s standard dummy text ever since the 1500s.
+											industry&apos;s standard dummy text ever since the
+											1500s.
 										</p>
 									</section>
 								))}
