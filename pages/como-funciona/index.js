@@ -1,31 +1,62 @@
 import React from 'react'
 import Layout from '../../src/components/layout/Layout'
 import SEO from '../../src/components/layout/SEO'
+import Image from 'next/image'
 
-const content = [
+const content1 = [
 	{
 		title: 'Elige',
 		subtitle: 'un producto o paquete',
+		img: 6,
 	},
 	{
 		title: 'Paga',
 		subtitle: 'tu producto(s)',
 		extra1: 'Oxxo, Visa o MasterCard',
 		extra2: '*Ofrecemos meses sin intereses',
+		img: 5,
 	},
 	{
 		title: 'Completa el formulario',
 		subtitle: 'con la descripción de tu proyecto',
+		img: 4,
 	},
 	{
 		title: 'Recibe',
 		subtitle: 'tu diseño',
 		extra1: 'Estaremos en contacto vía chat para las revisiones y entregas de tu proyecto.',
+		img: 3,
+	},
+]
+
+const content2 = [
+	{
+		title: 'Contáctanos',
+		subtitle: 'si no hay algún producto o paquete que se alinee a tus necesidades.',
+		img: 2,
+	},
+	{
+		title: 'Completa el formulario',
+		subtitle: 'con la descripción de tu proyecto',
+		img: 4,
+	},
+	{
+		title: 'Obtén',
+		subtitle: 'una propuesta personalizada',
+		img: 1,
+	},
+	{
+		title: 'Paga',
+		subtitle: 'tu producto(s)',
+		extra1: 'Oxxo, Visa o MasterCard',
+		extra2: '*Ofrecemos meses sin intereses',
+		img: 5,
 	},
 	{
 		title: 'Recibe',
 		subtitle: 'tu diseño',
-		extra1: 'Recibe atención personalizada a través de nuestro chat para las revisiones y entregas de tu proyecto.',
+		extra1: 'Estaremos en contacto vía chat para las revisiones y entregas de tu proyecto.',
+		img: 3,
 	},
 ]
 
@@ -59,10 +90,16 @@ const Index = () => {
 				{active === 0 ? (
 					<>
 						<div className='grid grid-cols-4 my-16'>
-							{content.slice(0, 4).map((item, i) => (
+							{content1.map((item, i) => (
 								<div key={i}>
 									<section className='grid place-items-center text-center gap-y-10'>
-										<div className='h-[100px] w-[100px] bg-gray-300' />
+										<div className='h-[100px] w-[100px] relative'>
+											<Image
+												src={`/assets/como-functiona/${item.img}.png`}
+												layout='fill'
+												className='absolute'
+											/>
+										</div>
 										<h1 className='h-[60px] w-[60px] grid place-items-center border-[5px] border-yellow-400 rounded-full text-2xl font-bold bg-white'>
 											0{i + 1}
 										</h1>
@@ -88,10 +125,16 @@ const Index = () => {
 				) : (
 					<>
 						<div className='grid grid-cols-5 my-16'>
-							{content.map((item, i) => (
+							{content2.map((item, i) => (
 								<div key={i}>
 									<section className='grid place-items-center text-center gap-y-10'>
-										<div className='h-[100px] w-[100px] bg-gray-300' />
+										<div className='h-[100px] w-[100px] relative'>
+											<Image
+												src={`/assets/como-functiona/${item.img}.png`}
+												layout='fill'
+												className='absolute'
+											/>
+										</div>
 										<h1 className='h-[60px] w-[60px] grid place-items-center border-[5px] border-yellow-400 rounded-full text-2xl font-bold bg-white'>
 											0{i + 1}
 										</h1>

@@ -9,6 +9,7 @@ import {
 	faLinkedin,
 	faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons'
+import Image from 'next/image'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 
 const Layout = ({ children }) => {
@@ -27,9 +28,15 @@ const Layout = ({ children }) => {
 				</header>
 
 				<header className='flex items-center justify-between py-3.5'>
-					<div className='flex items-center gap-14'>
+					<div className='flex items-center gap-20'>
 						<Link href='/'>
-							<a className='text-3xl font-bold'>CREATILAT</a>
+							<a className='w-[150px] h-[60px] relative'>
+								<Image
+									src={'/assets/logo.png'}
+									layout='fill'
+									className='absolute object-contain'
+								/>
+							</a>
 						</Link>
 						{/* desktop navigation */}
 						<nav className='flex gap-10 font-semibold'>

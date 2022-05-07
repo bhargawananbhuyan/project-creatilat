@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Productos({ productos }) {
 	return (
@@ -16,7 +17,13 @@ export default function Productos({ productos }) {
 							}}
 						>
 							<a className='block'>
-								<div className='bg-gray-200 w-full h-full' />
+								<div className='bg-gray-200 w-full h-full relative'>
+									<Image
+										src={`/assets/products/${p?.images[0]}`}
+										layout='fill'
+										className='absolute object-cover'
+									/>
+								</div>
 								<p className='font-semibold text-sm py-2 text-gray-600'>
 									{p.title}
 								</p>

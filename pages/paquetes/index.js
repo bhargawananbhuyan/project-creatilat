@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import Layout from '../../src/components/layout/Layout'
 import SEO from '../../src/components/layout/SEO'
+import Image from 'next/image'
 
 const Index = () => {
 	return (
@@ -35,7 +36,13 @@ const Index = () => {
 						},
 					].map((item, i) => (
 						<section key={i} className='paquetes-card'>
-							<div className='w-[150px] h-[100px] bg-gray-200' />
+							<div className='w-[150px] h-[100px] relative'>
+								<Image
+									src={`/assets/paquetes-${i + 1}.png`}
+									layout='fill'
+									className='absolute object-contain'
+								/>
+							</div>
 							<h2 className='text-4xl'>
 								$<strong>74</strong>.99
 							</h2>

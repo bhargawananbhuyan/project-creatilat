@@ -29,6 +29,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['bistrologo.png', 'Natura logo.jpg'],
 	},
 	{
 		title: 'Flyers',
@@ -60,6 +61,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['d2a8717d1f8faa435f4b0a6cfe810be8.png', 'Flyer rock.jpg'],
 	},
 	{
 		title: 'Correo electrónico',
@@ -79,6 +81,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['tarjeta de contacto.png', 'f047b15230cadde7e879a61f1678036b.jpg'],
 	},
 	{
 		title: 'Cartel o póster',
@@ -98,6 +101,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['music_festival.png', 'Poster jazz.jpg'],
 	},
 	{
 		title: 'Portada de libro',
@@ -117,6 +121,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['libro.png', 'libro domi.jpg'],
 	},
 	{
 		title: 'Infografía',
@@ -136,6 +141,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['Time line.png', 'covid infografia.jpg'],
 	},
 	{
 		title: 'Diseño de etiquetas',
@@ -167,6 +173,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['etiquetalamb.png', 'gelato icecream.jpg'],
 	},
 	{
 		title: 'Empaque',
@@ -186,6 +193,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['envase.png', 'etiqueta saludable.jpg'],
 	},
 	{
 		title: 'Menú',
@@ -205,6 +213,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['menu tapete.png', 'restaurante.jpg'],
 	},
 	{
 		title: 'Interior libros',
@@ -224,6 +233,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['libro abierto.png', 'contenido libro.jpg'],
 	},
 	{
 		title: 'Desplegables',
@@ -243,6 +253,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['desplegable foto.png', 'brochure.jpg'],
 	},
 	{
 		title: 'Ilustraciones',
@@ -262,6 +273,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['Space_Rock.png', 'dibujos animados.jpg'],
 	},
 	{
 		title: 'Tarjetas de presentación',
@@ -293,6 +305,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['business card.png', 'Tarjeta amarailla.jpg'],
 	},
 	{
 		title: 'Invitaciones',
@@ -324,6 +337,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['invitacion.png', 'feliz cumple.jpg'],
 	},
 	{
 		title: 'Portada de podcast o disco',
@@ -343,6 +357,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['maqueta de portada de musica.png', 'podcast reggae.jpg'],
 	},
 	{
 		title: 'Catálogo',
@@ -374,6 +389,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['Catalogo muebles.png', 'Catalogo muebles.png'],
 	},
 	{
 		title: 'Diseño de Tatuajes',
@@ -405,6 +421,7 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['ola.png', 'tatuaje felino.jpg'],
 	},
 	{
 		title: 'Diseño de Videojuegos',
@@ -424,5 +441,6 @@ export const productos = [
 				revisiones: 'limitado',
 			},
 		],
+		images: ['gamer3.png', 'gamer3.png'],
 	},
 ]

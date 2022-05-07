@@ -1,6 +1,6 @@
-import { faMobileScreen, faPiggyBank, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Image from 'next/image'
 import React from 'react'
+import SingleCarousel from '../../src/components/carousels/SingleCarousel'
 import Layout from '../../src/components/layout/Layout'
 
 export default function Index() {
@@ -30,11 +30,14 @@ export default function Index() {
 						</p>
 
 						<section className='grid grid-cols-3 place-items-center mt-8'>
-							<div className='grid place-items-center text-center gap-8'>
-								<FontAwesomeIcon
-									icon={faQuestionCircle}
-									className='text-4xl text-yellow-500'
-								/>
+							<div className='grid place-items-center text-center gap-6'>
+								<div className='h-[36px] w-[36px] relative'>
+									<Image
+										src={'/assets/quiz_black_24dp.png'}
+										layout='fill'
+										className='absolute'
+									/>
+								</div>
 								<section className='grid place-items-center gap-2.5'>
 									<div className='h-[32px] w-[32px] bg-gray-800 grid place-items-center rounded-full font-bold text-white'>
 										1
@@ -45,11 +48,14 @@ export default function Index() {
 									</div>
 								</section>
 							</div>
-							<div className='grid place-items-center text-center gap-8'>
-								<FontAwesomeIcon
-									icon={faMobileScreen}
-									className='text-4xl text-yellow-500'
-								/>
+							<div className='grid place-items-center text-center gap-6'>
+								<div className='h-[36px] w-[36px] relative'>
+									<Image
+										src={'/assets/send_to_mobile_black_24dp.png'}
+										layout='fill'
+										className='absolute'
+									/>
+								</div>
 								<section className='grid place-items-center gap-2.5'>
 									<div className='h-[32px] w-[32px] bg-gray-800 grid place-items-center rounded-full font-bold text-white'>
 										2
@@ -62,11 +68,14 @@ export default function Index() {
 									</div>
 								</section>
 							</div>
-							<div className='grid place-items-center text-center gap-8'>
-								<FontAwesomeIcon
-									icon={faPiggyBank}
-									className='text-4xl text-yellow-500'
-								/>
+							<div className='grid place-items-center text-center gap-5'>
+								<div className='h-[36px] w-[36px] relative'>
+									<Image
+										src={'/assets/savings_black_24dp.png'}
+										layout='fill'
+										className='absolute'
+									/>
+								</div>
 								<section className='grid place-items-center gap-2.5'>
 									<div className='h-[32px] w-[32px] bg-gray-800 grid place-items-center rounded-full font-bold text-white'>
 										3
@@ -81,7 +90,17 @@ export default function Index() {
 					</section>
 
 					<section>
-						<div className='h-[320px] w-full bg-gray-100' />
+						<div className='h-[350px] w-full'>
+							<SingleCarousel
+								fullScreen
+								images={[
+									'work place.png',
+									'work place.png',
+									'work place.png',
+									'work place.png',
+								]}
+							/>
+						</div>
 					</section>
 
 					<section className='py-20 grid gap-12'>
@@ -91,7 +110,13 @@ export default function Index() {
 						<div className='grid grid-cols-3 place-items-center gap-16'>
 							<section className='grid place-items-center gap-5 text-center'>
 								<h5 className='text-lg font-bold'>Nivel Plata</h5>
-								<div className='h-[75px] w-[75px] bg-gray-200' />
+								<div className='h-[75px] w-[75px] relative'>
+									<Image
+										src={'/assets/pantalla-2.png'}
+										layout='fill'
+										className='absolute'
+									/>
+								</div>
 								<p>
 									Haz más de 25 ventas mensuales y pasaras a nivel plata en el que
 									podrás ganar 5% de comisión por cada cliente nuevo que efectúe
@@ -100,7 +125,13 @@ export default function Index() {
 							</section>
 							<section className='grid place-items-center gap-5 text-center'>
 								<h5 className='text-lg font-bold'>Nivel Oro</h5>
-								<div className='h-[100px] w-[100px] bg-gray-200' />
+								<div className='h-[100px] w-[100px] relative'>
+									<Image
+										src={'/assets/pantalla-1.png'}
+										layout='fill'
+										className='absolute'
+									/>
+								</div>
 								<p>
 									Una vez que tengas un récord de 40 ventas mensuales por 3 meses
 									consecutivos, pasaras a afiliado nivel oro, ganando 8% de
@@ -110,7 +141,13 @@ export default function Index() {
 							</section>
 							<section className='grid place-items-center gap-5 text-center'>
 								<h5 className='text-lg font-bold'>Nivel Bronce</h5>
-								<div className='h-[75px] w-[75px] bg-gray-200' />
+								<div className='h-[75px] w-[75px] relative'>
+									<Image
+										src={'/assets/pantalla-3.png'}
+										layout='fill'
+										className='absolute'
+									/>
+								</div>
 								<p>
 									Emprende tu camino ganando comisiones del 3% por cada cliente
 									nuevo que efectúe compra(s) de servicio(s) exitosamente.

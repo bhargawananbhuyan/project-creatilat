@@ -11,6 +11,7 @@ import makeLink from '../../src/utils/makeLink'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import { productos as _productos } from '../../src/utils/data'
+import SingleCarousel from '../../src/components/carousels/SingleCarousel'
 
 const titleRoutes = [
 	'logo-e-identidad',
@@ -80,105 +81,115 @@ export default function Slug({ productos, producto }) {
 					<Productos productos={productos} />
 				</>
 			) : (
-				<>
-					<div className='bg-[#f8f8f8] py-14'>
-						<section className='max-w-screen-xl mx-auto grid grid-cols-2 items-center'>
-							<div className='grid gap-10'>
-								<section className='grid gap-5'>
-									<h1 className='text-5xl font-bold text-[#9419E8] underline underline-offset-[5px]'>
-										{producto?.title}
-									</h1>
-									<p className='leading-relaxed'>{producto?.description}</p>
-								</section>
-								<div className='flex items-center gap-3.5'>
-									<button className='bg-gradient-to-r from-[#881CFD] to-[#A514CD] px-7 py-3.5 font-semibold text-white rounded-full'>
-										Comenzar
-									</button>
-									<button className='border-2 border-[#A215D1] px-7 py-3.5 font-semibold text-[#A215D1] rounded-full'>
-										Cómo funciona
-									</button>
+				!router.isFallback && (
+					<>
+						<div className='bg-[#f8f8f8] py-14'>
+							<section className='max-w-screen-xl mx-auto grid grid-cols-2 items-center'>
+								<div className='grid gap-10'>
+									<section className='grid gap-5'>
+										<h1 className='text-5xl font-bold text-[#9419E8] underline underline-offset-[5px]'>
+											{producto?.title}
+										</h1>
+										<p className='leading-relaxed'>{producto?.description}</p>
+									</section>
+									<div className='flex items-center gap-3.5'>
+										<button className='bg-gradient-to-r from-[#881CFD] to-[#A514CD] px-7 py-3.5 font-semibold text-white rounded-full'>
+											Comenzar
+										</button>
+										<button className='border-2 border-[#A215D1] px-7 py-3.5 font-semibold text-[#A215D1] rounded-full'>
+											Cómo funciona
+										</button>
+									</div>
 								</div>
-							</div>
 
-							<div className='max-w-md w-full h-[300px] bg-gray-200 justify-self-end' />
-						</section>
-					</div>
-
-					<div className='max-w-screen-xl mx-auto grid gap-16 pt-14 pb-24'>
-						<section className='max-w-md grid gap-5'>
-							<h2 className='text-4xl font-bold'>Precio</h2>
-							<p>
-								Conoce más a cerca de nuestros precios y comienza hoy mismo tu
-								proyecto
-							</p>
-						</section>
-
-						<div className='grid grid-cols-5 gap-5'>
-							<section>
-								<div className='h-[8px]' />
-								<div className='h-[225px]' />
-
-								<div className='grid gap-3.5'>
-									<span>Propuestas</span>
-									<span>Revisiones</span>
-									<div className='h-[1px] w-full bg-gray-200' />
-									<span>Derechos de autor</span>
-									<span>Entregables AI/EPS/PDF/JPEG/PNG</span>
+								<div className='max-w-md w-full h-[350px] bg-white justify-self-end p-5 shadow-xl'>
+									<SingleCarousel
+										images={Array.from(Array(4).keys()).map(
+											() => producto?.images[1]
+										)}
+									/>
 								</div>
 							</section>
+						</div>
 
-							{producto?.precio?.map((_item, i) => (
-								<section
-									key={i}
-									className={`rounded-t-md overflow-hidden shadow-[0px_0px_15px_-5px_rgba(0,0,0,.25)] ${
-										_item.value === 'Contáctanos' ? 'bg-gray-100' : 'bg-white'
-									}`}
-								>
-									<div
-										className={`h-[8px] ${getLabelColor({
-											label: _item.label,
-										})}`}
-									/>
+						<div className='max-w-screen-xl mx-auto grid gap-16 pt-14 pb-24'>
+							<section className='max-w-md grid gap-5'>
+								<h2 className='text-4xl font-bold'>Precio</h2>
+								<p>
+									Conoce más a cerca de nuestros precios y comienza hoy mismo tu
+									proyecto
+								</p>
+							</section>
 
-									<div className='h-[225px] grid text-center'>
-										<span
-											className={`mt-5 font-bold ${getLabelColor({
-												type: 'text',
-												label: _item.label,
-											})}`}
-										>
-											{_item.label}
-										</span>
-										<h3 className={`text-2xl font-semibold`}>
-											{_item.value === 'Contáctanos'
-												? 'Contáctanos'
-												: `$${_item.value}`}
-										</h3>
-										<div className='px-3.5 border-t-2 pt-5'>
-											<button className='bg-black w-full py-2.5 px-5 text-white rounded-full font-semibold shadow-xl hover:shadow-none transition-all'>
-												{_item.value === 'Contáctanos'
-													? 'Contáctanos'
-													: 'Comprar'}
-											</button>
-										</div>
-									</div>
+							<div className='grid grid-cols-5 gap-5'>
+								<section>
+									<div className='h-[8px]' />
+									<div className='h-[225px]' />
 
-									<div className='grid gap-3.5 text-center'>
-										<span>{_item.propuestas}</span>
-										<span>{_item.revisiones}</span>
+									<div className='grid gap-3.5'>
+										<span>Propuestas</span>
+										<span>Revisiones</span>
 										<div className='h-[1px] w-full bg-gray-200' />
-										<span className='text-blue-500'>
-											<FontAwesomeIcon icon={faCircleCheck} />
-										</span>
-										<span className='text-blue-500'>
-											<FontAwesomeIcon icon={faCircleCheck} />
-										</span>
+										<span>Derechos de autor</span>
+										<span>Entregables AI/EPS/PDF/JPEG/PNG</span>
 									</div>
 								</section>
-							))}
+
+								{producto?.precio?.map((_item, i) => (
+									<section
+										key={i}
+										className={`rounded-t-md overflow-hidden shadow-[0px_0px_15px_-5px_rgba(0,0,0,.25)] ${
+											_item.value === 'Contáctanos'
+												? 'bg-gray-100'
+												: 'bg-white'
+										}`}
+									>
+										<div
+											className={`h-[8px] ${getLabelColor({
+												label: _item.label,
+											})}`}
+										/>
+
+										<div className='h-[225px] grid text-center'>
+											<span
+												className={`mt-5 font-bold ${getLabelColor({
+													type: 'text',
+													label: _item.label,
+												})}`}
+											>
+												{_item.label}
+											</span>
+											<h3 className={`text-2xl font-semibold`}>
+												{_item.value === 'Contáctanos'
+													? 'Contáctanos'
+													: `$${_item.value}`}
+											</h3>
+											<div className='px-3.5 border-t-2 pt-5'>
+												<button className='bg-black w-full py-2.5 px-5 text-white rounded-full font-semibold shadow-xl hover:shadow-none transition-all'>
+													{_item.value === 'Contáctanos'
+														? 'Contáctanos'
+														: 'Comprar'}
+												</button>
+											</div>
+										</div>
+
+										<div className='grid gap-3.5 text-center'>
+											<span>{_item.propuestas}</span>
+											<span>{_item.revisiones}</span>
+											<div className='h-[1px] w-full bg-gray-200' />
+											<span className='text-blue-500'>
+												<FontAwesomeIcon icon={faCircleCheck} />
+											</span>
+											<span className='text-blue-500'>
+												<FontAwesomeIcon icon={faCircleCheck} />
+											</span>
+										</div>
+									</section>
+								))}
+							</div>
 						</div>
-					</div>
-				</>
+					</>
+				)
 			)}
 		</Layout>
 	)
