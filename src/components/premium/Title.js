@@ -8,6 +8,7 @@ const Title = ({ text, img }) => {
 					src={`/assets/premium-${img}.png`}
 					layout='fill'
 					className='absolute object-contain'
+					alt=''
 				/>
 			</div>
 			<span>{text}</span>

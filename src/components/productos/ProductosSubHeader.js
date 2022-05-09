@@ -179,6 +179,7 @@ export default function ProductosSubHeader({ route }) {
 										src={`/assets/products/${_item.items[0].img}`}
 										layout='fill'
 										className='absolute'
+										alt=''
 									/>
 								</div>
 								<div className='absolute bottom-0 left-0 w-[375px] bg-white shadow-xl rounded-xl px-5 py-3.5 text-xs text-center font-semibold bg-opacity-95'>
@@ -194,6 +195,7 @@ export default function ProductosSubHeader({ route }) {
 										src={`/assets/products/${_item.items[0].img}`}
 										layout='fill'
 										className='absolute'
+										alt=''
 									/>
 								</div>
 								<div className='absolute bottom-0 left-0 w-full bg-white shadow-xl rounded-xl px-5 py-3.5 text-xs text-center font-semibold bg-opacity-95'>
@@ -210,6 +212,7 @@ export default function ProductosSubHeader({ route }) {
 											src={`/assets/products/${__item.img}`}
 											layout='fill'
 											className='absolute'
+											alt=''
 										/>
 									</div>
 									<div className='absolute bottom-0 left-0 w-[200px] bg-white shadow-xl rounded-xl px-5 py-3.5 text-xs text-center font-semibold bg-opacity-95'>

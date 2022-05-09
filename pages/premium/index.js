@@ -60,6 +60,7 @@ const Index = () => {
 							src={'/assets/PREMIUM-01.png'}
 							layout='fill'
 							className='absolute object-contain'
+							alt=''
 						/>
 					</section>
 				</div>

@@ -58,6 +58,7 @@ const PremiumCarousel = () => {
 									src={`/assets/products/premium-${i + 1}.jpg`}
 									layout='fill'
 									className='absolute'
+									alt=''
 								/>
 							</div>
 						</section>

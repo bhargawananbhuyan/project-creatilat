@@ -56,6 +56,7 @@ export default function ProductosHeader({ isRoute }) {
 											}.png`}
 											layout='fill'
 											className='absolute object-contain'
+											alt=''
 										/>
 									</div>
 								</div>

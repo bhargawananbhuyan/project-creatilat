@@ -65,6 +65,7 @@ const Cart = () => {
 							src={'/assets/loading.jpg'}
 							layout='fill'
 							className='absolute object-contain'
+							alt=''
 						/>
 					</div>
 				</div>
@@ -94,6 +95,7 @@ const Cart = () => {
 															src={'/assets/pink-dummy.jpg'}
 															layout='fill'
 															className='absolute'
+															alt=''
 														/>
 													</div>
 													<section className='grid gap-y-2.5'>
@@ -184,7 +186,10 @@ const Cart = () => {
 
 													<div className='flex items-center gap-x-2.5'>
 														{Array.from(Array(3).keys()).map((i) => (
-															<div className='h-[45px] w-[60px] relative'>
+															<div
+																key={i}
+																className='h-[45px] w-[60px] relative'
+															>
 																<Image
 																	src={`/assets/card-${
 																		i + 1
@@ -292,6 +297,7 @@ const Cart = () => {
 																src={`/assets/card-${i + 1}.png`}
 																layout='fill'
 																className='absolute object-contain'
+																alt=''
 															/>
 														</div>
 													))}
@@ -304,6 +310,7 @@ const Cart = () => {
 														src={`/assets/oxxo.png`}
 														layout='fill'
 														className='absolute object-contain'
+														alt=''
 													/>
 												</div>
 											</div>
@@ -317,6 +324,7 @@ const Cart = () => {
 														src={'/assets/pink-dummy.jpg'}
 														layout='fill'
 														className='absolute'
+														alt=''
 													/>
 												</div>
 												<section className='grid gap-y-2.5'>
@@ -358,6 +366,7 @@ const Cart = () => {
 									src={'/assets/exit.jpg'}
 									layout='fill'
 									className='absolute object-contain'
+									alt=''
 								/>
 							</div>
 							<button className='bg-black text-white px-14 py-3.5 font-semibold rounded-full'>

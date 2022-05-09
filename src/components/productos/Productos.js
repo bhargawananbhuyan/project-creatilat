@@ -22,6 +22,7 @@ export default function Productos({ productos }) {
 										src={`/assets/products/${p?.images[0]}`}
 										layout='fill'
 										className='absolute object-cover'
+										alt=''
 									/>
 								</div>
 								<p className='font-semibold text-sm py-2 text-gray-600'>

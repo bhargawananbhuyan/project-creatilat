@@ -29,6 +29,7 @@ export default function Index() {
 						src={`/assets/disco.png`}
 						layout='fill'
 						className='absolute object-cover'
+						alt=''
 					/>
 				</div>
 			</article>

@@ -41,6 +41,7 @@ const Index = () => {
 									src={`/assets/paquetes-${i + 1}.png`}
 									layout='fill'
 									className='absolute object-contain'
+									alt=''
 								/>
 							</div>
 							<h2 className='text-4xl'>
