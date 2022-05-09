@@ -77,7 +77,7 @@ const Index = () => {
 									<span>Entregables AI/EPS/PDF/JPEG/PNG</span>
 								</div>
 							</div>
-							<button className='bg-black w-full text-white py-2.5 rounded-full mt-5'>
+							<button className='bg-black w-full text-white py-2.5 rounded-full mt-5 font-semibold'>
 								Comprar
 							</button>
 						</section>
