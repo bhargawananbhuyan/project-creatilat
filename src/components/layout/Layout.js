@@ -10,72 +10,84 @@ import {
 	faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image'
-import { faCartShopping, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faCartShopping, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 const Layout = ({ children }) => {
 	return (
-		<div>
-			<header className='flex flex-col max-w-screen-xl mx-auto py-8'>
-				<header className='flex justify-end gap-10'>
-					<div className='flex items-center gap-2.5'>
-						<FontAwesomeIcon icon={faPhone} className='text-sm' />
-						<span>555 555 5555</span>
-					</div>
-					<div className='flex items-center gap-2.5'>
-						<FontAwesomeIcon icon={faWhatsapp} className='text-xl' />
-						<span>555 555 5555</span>
-					</div>
+		<div className='w-screen'>
+			<>
+				<header className='hidden md:flex flex-col max-w-screen-xl mx-auto py-8'>
+					<header className='flex justify-end gap-10'>
+						<div className='flex items-center gap-2.5'>
+							<FontAwesomeIcon icon={faPhone} className='text-sm' />
+							<span>555 555 5555</span>
+						</div>
+						<div className='flex items-center gap-2.5'>
+							<FontAwesomeIcon icon={faWhatsapp} className='text-xl' />
+							<span>555 555 5555</span>
+						</div>
+					</header>
+
+					<header className='flex items-center justify-between py-3.5'>
+						<div className='flex items-center gap-20'>
+							<Link href='/'>
+								<a className='w-[150px] h-[60px] relative'>
+									<Image
+										src={'/assets/logo.png'}
+										layout='fill'
+										className='absolute object-contain'
+										alt=''
+									/>
+								</a>
+							</Link>
+							{/* desktop navigation */}
+							<nav className='flex gap-10 font-semibold'>
+								<Link href='/productos'>
+									<a>Productos</a>
+								</Link>
+								<Link href='/paquetes'>
+									<a>Paquetes</a>
+								</Link>
+								<Link href='/premium'>
+									<a>Premium</a>
+								</Link>
+								<Link href='/como-funciona'>
+									<a>Como funciona</a>
+								</Link>
+								<Link href='/contacto'>
+									<a>Contacto</a>
+								</Link>
+							</nav>
+						</div>
+
+						<div className='justify-self-end flex items-center gap-x-8'>
+							<Link href={'/registro-de-pago/2'}>
+								<a className='text-lg'>
+									<FontAwesomeIcon icon={faCartShopping} />
+								</a>
+							</Link>
+
+							<Link href='/login'>
+								<a>Iniciar sesion</a>
+							</Link>
+						</div>
+					</header>
 				</header>
 
-				<header className='flex items-center justify-between py-3.5'>
-					<div className='flex items-center gap-20'>
-						<Link href='/'>
-							<a className='w-[150px] h-[60px] relative'>
-								<Image
-									src={'/assets/logo.png'}
-									layout='fill'
-									className='absolute object-contain'
-									alt=''
-								/>
-							</a>
-						</Link>
-						{/* desktop navigation */}
-						<nav className='flex gap-10 font-semibold'>
-							<Link href='/productos'>
-								<a>Productos</a>
-							</Link>
-							<Link href='/paquetes'>
-								<a>Paquetes</a>
-							</Link>
-							<Link href='/premium'>
-								<a>Premium</a>
-							</Link>
-							<Link href='/como-funciona'>
-								<a>Como funciona</a>
-							</Link>
-							<Link href='/contacto'>
-								<a>Contacto</a>
-							</Link>
-						</nav>
-					</div>
+				<header className='w-full flex px-5 py-5 shadow items-center justify-between md:hidden'>
+					<button className='px-2.5 py-1'>
+						<FontAwesomeIcon icon={faBars} />
+					</button>
 
-					<div className='justify-self-end flex items-center gap-x-8'>
-						<Link href={'/registro-de-pago/2'}>
-							<a className='text-lg'>
-								<FontAwesomeIcon icon={faCartShopping} />
-							</a>
-						</Link>
-
-						<Link href='/login'>
-							<a>Iniciar sesion</a>
-						</Link>
-					</div>
+					<button className='px-2.5 py-1'>
+						<FontAwesomeIcon icon={faCartShopping} />
+					</button>
 				</header>
-			</header>
+			</>
 			<main>{children}</main>
 			<footer>
 				<div className='bg-gray-100 py-14'>
-					<section className='grid grid-cols-5 gap-x-[100px] gap-10 max-w-screen-xl mx-auto'>
+					<section className='flex flex-wrap gap-x-16 px-5 md:gap-x-24 gap-10 max-w-screen-xl mx-auto'>
 						<section className='grid gap-3.5'>
 							<h1 className='font-bold'>MI CUENTA</h1>
 							<div className='grid gap-2'>
@@ -151,7 +163,7 @@ const Layout = ({ children }) => {
 						</section>
 					</section>
 				</div>
-				<section className='bg-black text-sm p-5 flex items-center justify-center gap-2'>
+				<section className='bg-black text-xs md:text-sm p-5 flex items-center justify-center gap-2'>
 					<em className='not-italic text-[#02AAAD]'>creatilat.com 2021 ©</em>
 					<strong className='font-semibold text-white'>
 						- Todos los derechos reservados.

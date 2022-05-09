@@ -27,13 +27,13 @@ const CircularCarousel = () => {
 	}, [embla, onSelect, setScrollSnaps])
 
 	return (
-		<div className='grid place-items-center w-[450px] gap-y-10'>
+		<div className='grid place-items-center w-[300px] sm:w-[450px] gap-y-8 sm:gap-y-10'>
 			<div className='overflow-hidden w-full' ref={carouselRef}>
 				<div className='flex'>
 					{Array.from(Array(4).keys()).map((i) => (
 						<div
 							key={i}
-							className='h-[420px] flex-shrink-0 relative mr-10 flex-[0_0_100%]'
+							className='h-[300px] sm:h-[420px] flex-shrink-0 relative gap-x-5 flex-[0_0_100%]'
 						>
 							<Image
 								src={`/assets/homepage-1.jpg`}
