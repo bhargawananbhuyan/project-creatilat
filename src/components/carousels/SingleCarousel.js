@@ -33,9 +33,9 @@ function SingleCarousel({ images, fullScreen = false }) {
 					{images?.map((img, i) => (
 						<div
 							key={i}
-							className={`bg-gray-200 h-[${
-								fullScreen ? 320 : 275
-							}px] flex-[0_0_100%] relative`}
+							className={`bg-gray-200 ${
+								fullScreen ? 'h-[320px]' : 'h-[275px]'
+							} flex-[0_0_100%] relative`}
 						>
 							<Image
 								src={`/assets/products/${img}`}

@@ -1,6 +1,5 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import Image from 'next/image'
 
 export default function RegisterForm({
 	active,
@@ -11,13 +10,13 @@ export default function RegisterForm({
 	return (
 		<section className='max-w-lg w-full grid gap-10 pt-12 pb-20'>
 			<section className='grid gap-2.5'>
-				<h1 className='text-3xl font-bold leading-normal'>{title}</h1>
+				<h1 className='text-[1.75rem] font-extrabold leading-normal'>{title}</h1>
 				<p>{subtitle}</p>
 			</section>
 
 			<div className='flex gap-10'>
 				<button
-					className={`${
+					className={`font-semibold ${
 						active === 1
 							? 'underline underline-offset-[5px] decoration-blue-500 decoration-[3.5px]'
 							: ''
@@ -27,7 +26,7 @@ export default function RegisterForm({
 					Iniciar Sesión
 				</button>
 				<button
-					className={`${
+					className={`font-semibold ${
 						active === 2
 							? 'underline underline-offset-[5px] decoration-blue-500 decoration-[3.5px]'
 							: ''
@@ -39,11 +38,25 @@ export default function RegisterForm({
 			</div>
 			<div className='grid gap-2.5 text-sm'>
 				<button className='py-3.5 px-5 bg-gray-100 rounded-lg text-left flex items-center gap-3.5'>
-					<FontAwesomeIcon icon={faGoogle} className='text-lg' />{' '}
+					<div className='h-[21px] w-[21px] relative'>
+						<Image
+							src={'/assets/google.png'}
+							layout='fill'
+							className='absolute object-contain'
+							alt=''
+						/>
+					</div>
 					<span>Regístrate con Google</span>
 				</button>
 				<button className='py-3.5 px-5 bg-gray-100 rounded-lg text-left flex items-center gap-3.5'>
-					<FontAwesomeIcon icon={faFacebookF} className='text-lg text-blue-500' />{' '}
+					<div className='h-[21px] w-[21px] relative'>
+						<Image
+							src={'/assets/facebook.png'}
+							layout='fill'
+							className='absolute object-contain'
+							alt=''
+						/>
+					</div>
 					<span>Regístrate con Facebook</span>
 				</button>
 			</div>
@@ -82,7 +95,8 @@ export default function RegisterForm({
 
 				<button
 					type='submit'
-					className='bg-gray-800 py-3.5 rounded-full text-white mt-8 shadow-xl hover:shadow-none'
+					disabled
+					className='bg-gray-800 disabled:bg-gray-600 py-3.5 rounded-full text-white mt-8 shadow-xl disabled:hover:shadow-xl hover:shadow-none'
 				>
 					Registrarme
 				</button>

@@ -1,10 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
-const BlogCard = ({ slug }) => {
+const BlogCard = ({ slug, img }) => {
 	return (
 		<section className='blogCard'>
-			<div className='blogCardImg' />
+			<div className='blogCardImg relative'>
+				<Image src={img} layout='fill' className='absolute object-cover' alt='' />
+			</div>
 			<section className='blogCardBody'>
 				<div>
 					<h2 className='font-bold text-blue-400'>Marketing y Publicidad</h2>

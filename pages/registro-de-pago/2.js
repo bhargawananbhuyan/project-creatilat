@@ -4,6 +4,7 @@ import React from 'react'
 import Layout from '../../src/components/layout/Layout'
 import SEO from '../../src/components/layout/SEO'
 import InputField from '../../src/components/layout/InputField'
+import Image from 'next/image'
 
 const Stepper = ({ titles, active, done, setActive, setDone }) => {
 	return (
@@ -59,7 +60,13 @@ const Cart = () => {
 			{loading ? (
 				<div className='grid place-items-center pt-16 pb-32 gap-y-10'>
 					<h1 className='text-4xl font-bold'>Estamos procesando tu pago</h1>
-					<div className='h-[300px] w-[450px] bg-gray-300' />
+					<div className='h-[300px] w-[450px] bg-gray-200 relative'>
+						<Image
+							src={'/assets/loading.jpg'}
+							layout='fill'
+							className='absolute object-contain'
+						/>
+					</div>
 				</div>
 			) : (
 				<>
@@ -82,7 +89,13 @@ const Cart = () => {
 											<h2 className='text-2xl font-bold'>Mi carrito</h2>
 											<div className='flex gap-x-20 items-start'>
 												<section className='flex items-center gap-x-8'>
-													<div className='h-[120px] w-[120px] bg-gray-500 flex-shrink-0' />
+													<div className='h-[120px] w-[120px] bg-gray-200 flex-shrink-0 relative'>
+														<Image
+															src={'/assets/pink-dummy.jpg'}
+															layout='fill'
+															className='absolute'
+														/>
+													</div>
 													<section className='grid gap-y-2.5'>
 														<h6 className='text-lg font-bold'>
 															Logotipo + Flyer
@@ -152,21 +165,38 @@ const Cart = () => {
 											<hr />
 
 											<div className='grid gap-y-8 mt-5'>
-												<label
-													htmlFor='card-payment'
-													className='flex items-center gap-x-2 px-5 cursor-pointer'
-												>
-													<input
-														id='card-payment'
-														type='radio'
-														value={0}
-														onChange={() => setPaymentType(0)}
-														checked={paymentType === 0}
-													/>
-													<span className='mt-[-3.5px]'>
-														Tarjeta de crédito o débito
-													</span>
-												</label>
+												<div className='flex items-center justify-between'>
+													<label
+														htmlFor='card-payment'
+														className='flex items-center gap-x-2 px-5 cursor-pointer'
+													>
+														<input
+															id='card-payment'
+															type='radio'
+															value={0}
+															onChange={() => setPaymentType(0)}
+															checked={paymentType === 0}
+														/>
+														<span className='mt-[-3.5px]'>
+															Tarjeta de crédito o débito
+														</span>
+													</label>
+
+													<div className='flex items-center gap-x-2.5'>
+														{Array.from(Array(3).keys()).map((i) => (
+															<div className='h-[45px] w-[60px] relative'>
+																<Image
+																	src={`/assets/card-${
+																		i + 1
+																	}.png`}
+																	layout='fill'
+																	alt=''
+																	className='absolute object-contain'
+																/>
+															</div>
+														))}
+													</div>
+												</div>
 
 												{paymentType === 0 && (
 													<form className='max-w-sm text-sm grid gap-2.5 px-5'>
@@ -179,21 +209,32 @@ const Cart = () => {
 													</form>
 												)}
 												<hr />
-												<label
-													htmlFor='oxxo-payment'
-													className='flex items-center gap-x-2 px-5 cursor-pointer'
-												>
-													<input
-														id='oxxo-payment'
-														type='radio'
-														value={1}
-														onChange={() => setPaymentType(1)}
-														checked={paymentType === 1}
-													/>
-													<span className='mt-[-3.5px]'>
-														Pago en efectivo
-													</span>
-												</label>
+
+												<div className='flex items-center justify-between'>
+													<label
+														htmlFor='oxxo-payment'
+														className='flex items-center gap-x-2 px-5 cursor-pointer'
+													>
+														<input
+															id='oxxo-payment'
+															type='radio'
+															value={1}
+															onChange={() => setPaymentType(1)}
+															checked={paymentType === 1}
+														/>
+														<span className='mt-[-3.5px]'>
+															Pago en efectivo
+														</span>
+													</label>
+													<div className='h-[45px] w-[60px] relative'>
+														<Image
+															src={`/assets/oxxo.png`}
+															layout='fill'
+															alt=''
+															className='absolute object-contain'
+														/>
+													</div>
+												</div>
 												<hr />
 
 												<h2 className='text-lg font-bold'>
@@ -240,26 +281,44 @@ const Cart = () => {
 									{active === 0 ? (
 										<div className='grid gap-y-5 mt-10'>
 											<div className='grid gap-y-2.5 text-sm'>
-												<h6>Lorem ipsum</h6>
+												<h6>Tarjeta de débito o crédito</h6>
 												<div className='flex gap-x-5'>
 													{Array.from(Array(3).keys()).map((i) => (
 														<div
 															key={i}
-															className='h-[45px] w-[60px] bg-gray-500'
-														></div>
+															className='h-[45px] w-[60px] relative'
+														>
+															<Image
+																src={`/assets/card-${i + 1}.png`}
+																layout='fill'
+																className='absolute object-contain'
+															/>
+														</div>
 													))}
 												</div>
 											</div>
 											<div className='grid gap-y-2.5 text-sm'>
-												<h6>Lorem ipsum</h6>
-												<div className='h-[45px] w-[60px] bg-gray-500'></div>
+												<h6>Efectivo</h6>
+												<div className='h-[45px] w-[60px] relative'>
+													<Image
+														src={`/assets/oxxo.png`}
+														layout='fill'
+														className='absolute object-contain'
+													/>
+												</div>
 											</div>
 										</div>
 									) : active === 1 ? (
 										<div className='bg-white px-10 py-8 grid gap-y-8 mt-10'>
 											<h5 className='text-lg'>Resumen del carrito</h5>
 											<section className='flex items-center gap-x-5'>
-												<div className='h-[120px] w-[120px] bg-gray-500 flex-shrink-0' />
+												<div className='h-[120px] w-[120px] bg-gray-200 flex-shrink-0 relative'>
+													<Image
+														src={'/assets/pink-dummy.jpg'}
+														layout='fill'
+														className='absolute'
+													/>
+												</div>
 												<section className='grid gap-y-2.5'>
 													<h6 className='font-bold'>Logotipo + Flyer</h6>
 													<p className='text-sm'>
@@ -294,7 +353,13 @@ const Cart = () => {
 								<h1 className='text-4xl font-bold'>¡Pago exitoso!</h1>
 								<p>Te hemos enviado tu formulario.</p>
 							</section>
-							<div className='w-[450px] h-[300px] bg-gray-200' />
+							<div className='w-[450px] h-[300px] bg-gray-200 relative'>
+								<Image
+									src={'/assets/exit.jpg'}
+									layout='fill'
+									className='absolute object-contain'
+								/>
+							</div>
 							<button className='bg-black text-white px-14 py-3.5 font-semibold rounded-full'>
 								Continuar
 							</button>

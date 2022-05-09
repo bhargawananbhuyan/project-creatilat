@@ -68,10 +68,12 @@ const Index = () => {
 			<SEO title='Como funciona' />
 
 			<div className='max-w-screen-xl mx-auto relative'>
-				<h1 className='text-4xl text-center font-bold mt-5 mb-10'>Como funciona</h1>
-				<div className='max-w-sm mx-auto grid grid-cols-2'>
+				<h1 className='text-5xl text-center font-extrabold mt-5 mb-10 text-gray-600'>
+					Como funciona
+				</h1>
+				<div className='max-w-md mx-auto grid grid-cols-2'>
 					<button
-						className={`py-2.5 border border-black ${
+						className={`font-semibold py-2.5 border border-black ${
 							active === 0 ? 'bg-black text-white' : ''
 						}`}
 						onClick={() => setActive(0)}
@@ -79,7 +81,7 @@ const Index = () => {
 						Productos y paquetes
 					</button>
 					<button
-						className={`py-2.5 border border-black ${
+						className={`font-semibold py-2.5 border border-black ${
 							active === 1 ? 'bg-black text-white' : ''
 						}`}
 						onClick={() => setActive(1)}
@@ -98,13 +100,14 @@ const Index = () => {
 												src={`/assets/como-functiona/${item.img}.png`}
 												layout='fill'
 												className='absolute'
+												alt=''
 											/>
 										</div>
-										<h1 className='h-[60px] w-[60px] grid place-items-center border-[5px] border-yellow-400 rounded-full text-2xl font-bold bg-white'>
+										<h1 className='h-[60px] w-[60px] grid place-items-center border-[5px] border-yellow-400 rounded-full text-2xl font-extrabold bg-white'>
 											0{i + 1}
 										</h1>
 										<section>
-											<h2 className='font-bold'>{item.title}</h2>
+											<h2 className='text-sm font-extrabold'>{item.title}</h2>
 											<p className='grid text-sm'>
 												<span>{item.subtitle}</span>
 												<span className='mt-2.5'>{item.extra1}</span>
@@ -133,13 +136,14 @@ const Index = () => {
 												src={`/assets/como-functiona/${item.img}.png`}
 												layout='fill'
 												className='absolute'
+												alt=''
 											/>
 										</div>
-										<h1 className='h-[60px] w-[60px] grid place-items-center border-[5px] border-yellow-400 rounded-full text-2xl font-bold bg-white'>
+										<h1 className='h-[60px] w-[60px] grid place-items-center border-[5px] border-yellow-400 rounded-full text-2xl font-extrabold bg-white'>
 											0{i + 1}
 										</h1>
 										<section>
-											<h2 className='font-bold'>{item.title}</h2>
+											<h2 className='text-sm font-extrabold'>{item.title}</h2>
 											<p className='grid text-sm'>
 												<span>{item.subtitle}</span>
 												<span className='mt-2.5'>{item.extra1}</span>
@@ -150,7 +154,7 @@ const Index = () => {
 								</div>
 							))}
 						</div>
-						<div className='h-[5px] w-full bg-gray-300 absolute bottom-[11.2rem] z-[-1]'>
+						<div className='h-[5px] w-full bg-gray-300 absolute bottom-[9.8rem] z-[-1]'>
 							<div className='w-full relative'>
 								<div className='h-[1rem] w-[1rem] bg-gray-300 rounded-full absolute top-[-.37rem] left-[-5px]' />
 								<div className='h-[1rem] w-[1rem] bg-gray-300 rounded-full absolute top-[-.37rem] right-[-5px]' />

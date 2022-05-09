@@ -1,11 +1,12 @@
 import React from 'react'
 import Layout from '../src/components/layout/Layout'
+import Image from 'next/image'
 
 export default function ForgotPassword() {
 	return (
 		<Layout>
-			<article className='grid grid-cols-2 max-w-screen-xl mx-auto'>
-				<section className='max-w-md grid gap-10 px-5 py-[150px]'>
+			<article className='grid grid-cols-2'>
+				<section className='max-w-md mx-auto grid gap-10 px-5 py-[150px]'>
 					<section className='grid gap-2.5'>
 						<h1 className='text-3xl font-bold leading-normal'>
 							¿Olvidaste tu contraseña?
@@ -17,7 +18,7 @@ export default function ForgotPassword() {
 							placeholder='Correo electrónico'
 							className='border px-5 py-2.5 outline-none rounded-lg'
 						/>
-						<button className='bg-gray-800 py-3.5 rounded-full text-white mt-5 shadow-xl hover:shadow-none'>
+						<button className='bg-gray-800 py-3.5 rounded-full text-white mt-5 shadow-xl hover:shadow-none font-semibold'>
 							Recuperar
 						</button>
 						<div className='mt-5 text-center font-semibold'>
@@ -25,7 +26,14 @@ export default function ForgotPassword() {
 						</div>
 					</form>
 				</section>
-				<div className='h-full w-full bg-gray-200' />
+				<div className='h-full w-full bg-gray-200 relative'>
+					<Image
+						src={'/assets/cafe.png'}
+						layout='fill'
+						className='absolute object-cover'
+						alt=''
+					/>
+				</div>
 			</article>
 		</Layout>
 	)

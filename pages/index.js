@@ -34,7 +34,7 @@ export default function Home() {
 									className='border pt-2.5 pb-3 px-5 w-full rounded-lg outline-none'
 								/>
 								<button
-									className={`bg-green-600 px-8 py-2.5 text-white rounded-full shadow-xl hover:shadow-none`}
+									className={`bg-green-600 px-14 py-2.5 text-white rounded-full shadow-xl hover:shadow-none`}
 								>
 									Buscar
 								</button>
@@ -53,7 +53,7 @@ export default function Home() {
 					<div className='max-w-screen-lg mx-auto mt-32'>
 						<section className='grid gap-8'>
 							<h1 className={`text-5xl font-bold text-yellow-500`}>Empresas</h1>
-							<p>
+							<p className='leading-loose'>
 								Cuando se trata del diseño del logotipo de tu empresa y otros
 								aspectos de identidad visual, todo cuenta. Conozca a nuestro equipo
 								solicitando una consulta de marca. Determinaremos rápidamente la
@@ -81,7 +81,7 @@ export default function Home() {
 						</section>
 
 						<div className='grid place-items-center mt-10'>
-							<button className='bg-yellow-500 text-white font-semibold py-3.5 max-w-[600px] w-full px-5 rounded-full shadow-xl hover:shadow-none'>
+							<button className='bg-yellow-500 text-white font-semibold py-3.5 max-w-[450px] w-full px-5 rounded-full shadow-xl hover:shadow-none'>
 								Contáctanos
 							</button>
 						</div>
@@ -106,7 +106,7 @@ export default function Home() {
 								/>
 							</div>
 							<section className='grid place-items-center max-w-xl text-center gap-5'>
-								<h5 className='text-xl font-bold text-blue-500'>
+								<h5 className='text-3xl font-bold text-blue-500'>
 									Tendencias en diseño 2022
 								</h5>
 								<p>
@@ -116,7 +116,7 @@ export default function Home() {
 									of type and scrambled it to make a type specimen book. It has
 									survived not only five centuries.
 								</p>
-								<button className='px-12 py-3.5 bg-blue-500 text-white rounded-full shadow-xl hover:shadow-none mt-5'>
+								<button className='px-12 py-3.5 bg-blue-500 text-white rounded-full shadow-xl hover:shadow-none mt-5 font-semibold'>
 									Conocer más
 								</button>
 							</section>
@@ -125,7 +125,7 @@ export default function Home() {
 						<div className='h-full w-[1.5px] bg-gray-200' style={{ gridColumn: '2' }} />
 
 						<section className='grid gap-10' style={{ gridColumn: '3' }}>
-							<h1 className='text-xl font-bold text-blue-500 ml-5'>
+							<h1 className='text-2xl font-bold text-blue-500 ml-5'>
 								Conoce nuestros tips de inspiración
 							</h1>
 							<section className='grid gap-5'>
@@ -149,7 +149,7 @@ export default function Home() {
 								))}
 							</section>
 
-							<button className='py-3.5 w-full bg-blue-500 text-white rounded-full shadow-xl hover:shadow-none'>
+							<button className='py-3.5 w-full bg-blue-500 text-white rounded-full shadow-xl font-semibold hover:shadow-none'>
 								Llévame al blog
 							</button>
 						</section>

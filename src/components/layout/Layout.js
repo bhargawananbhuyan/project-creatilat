@@ -6,11 +6,11 @@ import {
 	faInstagram,
 	faYoutube,
 	faTwitter,
-	faLinkedin,
 	faWhatsapp,
+	faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image'
-import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 const Layout = ({ children }) => {
 	return (
@@ -35,6 +35,7 @@ const Layout = ({ children }) => {
 									src={'/assets/logo.png'}
 									layout='fill'
 									className='absolute object-contain'
+									alt=''
 								/>
 							</a>
 						</Link>
@@ -58,9 +59,17 @@ const Layout = ({ children }) => {
 						</nav>
 					</div>
 
-					<Link href='/login'>
-						<a className=' justify-self-end'>Iniciar sesion</a>
-					</Link>
+					<div className='justify-self-end flex items-center gap-x-8'>
+						<Link href={'/registro-de-pago/2'}>
+							<a className='text-lg'>
+								<FontAwesomeIcon icon={faCartShopping} />
+							</a>
+						</Link>
+
+						<Link href='/login'>
+							<a>Iniciar sesion</a>
+						</Link>
+					</div>
 				</header>
 			</header>
 			<main>{children}</main>
@@ -70,8 +79,12 @@ const Layout = ({ children }) => {
 						<section className='grid gap-3.5'>
 							<h1 className='font-bold'>MI CUENTA</h1>
 							<div className='grid gap-2'>
-								<div>Iniciar Sesión</div>
-								<div>Registrarme</div>
+								<Link href='/login'>
+									<a>Iniciar Sesión</a>
+								</Link>
+								<Link href='/login'>
+									<a>Registrarme</a>
+								</Link>
 							</div>
 						</section>
 
@@ -81,7 +94,9 @@ const Layout = ({ children }) => {
 								<Link href='/preguntas-frecuentes'>
 									<a>Preguntas frecuentes</a>
 								</Link>
-								<div>Guías y sugerencias</div>
+								<Link href='/preguntas-frecuentes'>
+									<a>Guías y sugerencias</a>
+								</Link>
 							</div>
 						</section>
 
@@ -100,30 +115,39 @@ const Layout = ({ children }) => {
 						<section className='flex-shrink-0 grid gap-3.5'>
 							<h1 className='font-bold'>AFILIADOS</h1>
 							<div className='grid gap-2'>
-								<div>Como funciona</div>
-								<div>Acceso a afiliados</div>
+								<Link href='/como-funciona'>
+									<a>Como funciona</a>
+								</Link>
+								<Link href='/subsidiary-login'>
+									<a>Acceso a afiliados</a>
+								</Link>
 							</div>
 						</section>
 
 						<section className='flex-shrink-0 grid gap-3.5'>
 							<h1 className='font-bold'>SÍGUENOS EN REDES SOCIALES</h1>
-							<div className='text-xl flex flex-wrap gap-5'>
+							<div className='text-xl flex flex-wrap gap-x-8 gap-y-5'>
 								<FontAwesomeIcon icon={faFacebookF} />
 								<FontAwesomeIcon icon={faInstagram} />
 								<FontAwesomeIcon icon={faYoutube} />
 								<FontAwesomeIcon icon={faTwitter} />
-								<FontAwesomeIcon icon={faLinkedin} />
+								<FontAwesomeIcon icon={faLinkedinIn} />
 							</div>
 						</section>
 
 						<section className='flex-shrink-0'>
 							<h1 className='font-bold mb-3.5'>CONTACTO</h1>
-							<p>Iniciar Sesión</p>
+
+							<Link href='/contacto'>
+								<a>Información de Contacto</a>
+							</Link>
 						</section>
 
 						<section className='flex-shrink-0'>
 							<h1 className='font-bold mb-3.5'>BLOG</h1>
-							<p>Publicaciones</p>
+							<Link href='/blog'>
+								<a>Publicaciones</a>
+							</Link>
 						</section>
 					</section>
 				</div>

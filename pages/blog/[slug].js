@@ -12,6 +12,7 @@ import {
 	faThumbsDown,
 	faThumbsUp,
 } from '@fortawesome/free-solid-svg-icons'
+import Image from 'next/image'
 
 const Blog = () => {
 	const router = useRouter()
@@ -22,7 +23,14 @@ const Blog = () => {
 			<SEO title={`Blogs | ${slug}`} />
 
 			<article className='grid gap-y-14 text-[#77838F]'>
-				<div className='h-[350px] w-full bg-gray-200' />
+				<div className='h-[350px] w-full bg-gray-200 relative'>
+					<Image
+						src={'/assets/blog/banner-1.png'}
+						layout='fill'
+						className='absolute object-cover'
+						alt=''
+					/>
+				</div>
 				<div className='max-w-screen-md mx-auto grid gap-y-14'>
 					<section className='grid place-items-center text-center gap-y-3.5'>
 						<h1 className='text-3xl font-semibold text-black'>Título del Blog</h1>
@@ -37,7 +45,14 @@ const Blog = () => {
 
 					<section className='border-t border-b flex items-center justify-between py-5'>
 						<div className='flex items-center gap-x-3.5'>
-							<div className='w-[60px] h-[60px] bg-gray-300 rounded-full' />
+							<div className='w-[60px] h-[60px] bg-gray-300 rounded-full relative'>
+								<Image
+									src={'/assets/blog/avatar.png'}
+									layout='fill'
+									className='absolute object-contain'
+									alt=''
+								/>
+							</div>
 							<section className='grid gap-1'>
 								<h3 className='font-semibold text-black'>
 									Autor de la publicación
@@ -67,7 +82,14 @@ const Blog = () => {
 					versions of Lorem Ipsum.
 				</p>
 
-				<div className='h-[300px] bg-gray-200 max-w-screen-lg w-full mx-auto' />
+				<div className='h-[300px] bg-gray-200 max-w-screen-lg w-full mx-auto relative'>
+					<Image
+						src={'/assets/blog/banner-2.png'}
+						layout='fill'
+						className='absolute object-cover'
+						alt=''
+					/>
+				</div>
 
 				<p className='max-w-screen-md mx-auto leading-relaxed'>
 					Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
@@ -123,7 +145,14 @@ const Blog = () => {
 					</ul>
 				</section>
 
-				<div className='h-[300px] bg-gray-200 max-w-screen-lg w-full mx-auto' />
+				<div className='h-[300px] bg-gray-200 max-w-screen-lg w-full mx-auto relative'>
+					<Image
+						src={'/assets/blog/banner-3.png'}
+						layout='fill'
+						className='absolute object-cover'
+						alt=''
+					/>
+				</div>
 
 				<p className='max-w-screen-md mx-auto'>
 					There are many variations of passages of Lorem Ipsum available, but the majority
@@ -149,7 +178,14 @@ const Blog = () => {
 								<section className='w-full px-5 py-8'>
 									<div className='flex justify-between items-start w-full'>
 										<div className='flex items-center gap-x-3.5'>
-											<div className='w-[45px] h-[45px] bg-gray-300 rounded-full' />
+											<div className='w-[45px] h-[45px] bg-gray-300 rounded-full relative'>
+												<Image
+													src={'/assets/blog/avatar.png'}
+													layout='fill'
+													className='absolute object-cover'
+													alt=''
+												/>
+											</div>
 											<section className='grid gap-1'>
 												<h3 className='font-semibold text-black text-sm'>
 													Nombre A.
@@ -174,7 +210,14 @@ const Blog = () => {
 										<section className='pl-10 mt-8'>
 											<div className='flex justify-between items-start w-full'>
 												<div className='flex items-center gap-x-3.5'>
-													<div className='w-[45px] h-[45px] bg-gray-300 rounded-full' />
+													<div className='w-[45px] h-[45px] bg-gray-300 rounded-full relative'>
+														<Image
+															src={'/assets/blog/avatar.png'}
+															layout='fill'
+															className='absolute object-cover'
+															alt=''
+														/>
+													</div>
 													<section className='grid gap-1'>
 														<h3 className='font-semibold text-black text-sm'>
 															Nombre A.

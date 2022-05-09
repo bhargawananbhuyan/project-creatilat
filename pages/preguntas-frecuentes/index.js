@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import Layout from '../../src/components/layout/Layout'
 import SEO from '../../src/components/layout/SEO'
+import Image from 'next/image'
 
 export default function Index() {
 	return (
@@ -15,7 +16,14 @@ export default function Index() {
 							<h1 className='text-3xl font-bold'>¿Aún tienes dudas?</h1>
 							<p>No te preocupes, nosotros te ayudamos.</p>
 						</section>
-						<div className='w-[400px] h-[400px] bg-gray-200' />
+						<div className='w-[400px] h-[400px] bg-gray-200 relative'>
+							<Image
+								src={'/assets/preguntas.jpg'}
+								layout='fill'
+								className='absolute'
+								alt=''
+							/>
+						</div>
 					</div>
 					<div>
 						{[

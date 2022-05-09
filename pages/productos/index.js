@@ -1,3 +1,4 @@
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useRouter } from 'next/router'
 import React from 'react'
 import InputField from '../../src/components/layout/InputField'
@@ -22,6 +23,7 @@ export default function Index() {
 					<InputField
 						placeholder='Logotipo, empaque, ilustraciones…'
 						additionalClasses='text-sm'
+						icon={faSearch}
 					/>
 				</div>
 				<ProductosHeader isRoute={isRoute} />

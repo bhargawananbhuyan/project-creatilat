@@ -9,10 +9,10 @@ export default function Index() {
 			<div>
 				<div className='bg-gray-200'>
 					<section className='max-w-screen-xl mx-auto py-14 grid place-items-center gap-10'>
-						<h1 className='text-4xl font-bold'>
+						<h1 className='text-4xl font-extrabold'>
 							Recomienda nuestros productos y gana más.
 						</h1>
-						<button className='bg-yellow-500 text-white font-semibold px-10 py-3.5 rounded-full shadow-xl hover:shadow-none'>
+						<button className='bg-yellow-500 text-white font-semibold px-6 py-3.5 rounded-full shadow-xl hover:shadow-none'>
 							Quiero afiliarme
 						</button>
 					</section>
@@ -36,6 +36,7 @@ export default function Index() {
 										src={'/assets/quiz_black_24dp.png'}
 										layout='fill'
 										className='absolute'
+										alt=''
 									/>
 								</div>
 								<section className='grid place-items-center gap-2.5'>
@@ -54,6 +55,7 @@ export default function Index() {
 										src={'/assets/send_to_mobile_black_24dp.png'}
 										layout='fill'
 										className='absolute'
+										alt=''
 									/>
 								</div>
 								<section className='grid place-items-center gap-2.5'>
@@ -74,6 +76,7 @@ export default function Index() {
 										src={'/assets/savings_black_24dp.png'}
 										layout='fill'
 										className='absolute'
+										alt=''
 									/>
 								</div>
 								<section className='grid place-items-center gap-2.5'>
@@ -94,17 +97,17 @@ export default function Index() {
 							<SingleCarousel
 								fullScreen
 								images={[
-									'work place.png',
-									'work place.png',
-									'work place.png',
-									'work place.png',
+									'work_place.png',
+									'work_place.png',
+									'work_place.png',
+									'work_place.png',
 								]}
 							/>
 						</div>
 					</section>
 
 					<section className='py-20 grid gap-12'>
-						<h4 className='text-lg font-bold text-blue-500 underline underline-offset-4 decoration-[3.5px]'>
+						<h4 className='text-2xl font-bold text-blue-500 underline underline-offset-4 decoration-[3.5px]'>
 							Niveles de afiliación
 						</h4>
 						<div className='grid grid-cols-3 place-items-center gap-16'>
@@ -115,6 +118,7 @@ export default function Index() {
 										src={'/assets/pantalla-2.png'}
 										layout='fill'
 										className='absolute'
+										alt=''
 									/>
 								</div>
 								<p>
@@ -130,6 +134,7 @@ export default function Index() {
 										src={'/assets/pantalla-1.png'}
 										layout='fill'
 										className='absolute'
+										alt=''
 									/>
 								</div>
 								<p>
@@ -146,6 +151,7 @@ export default function Index() {
 										src={'/assets/pantalla-3.png'}
 										layout='fill'
 										className='absolute'
+										alt=''
 									/>
 								</div>
 								<p>
@@ -159,11 +165,11 @@ export default function Index() {
 
 				<div className='bg-[#C79936]'>
 					<section className='max-w-screen-xl mx-auto grid place-items-center gap-10 py-16'>
-						<h1 className='text-3xl font-bold text-white'>
+						<h1 className='text-[1.75rem] font-extrabold text-white'>
 							¿Estas listo para ganar increíbles comisiones y ser parte de nuestros
 							afiliados?
 						</h1>
-						<button className='bg-blue-500 text-white px-8 py-3.5 rounded-full font-semibold shadow-xl hover:shadow-none'>
+						<button className='bg-blue-500 text-white px-14 py-3.5 rounded-full font-semibold shadow-xl hover:shadow-none'>
 							Quiero afiliarme
 						</button>
 					</section>

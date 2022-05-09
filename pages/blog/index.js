@@ -44,24 +44,24 @@ const Index = () => {
 					</section>
 					<div className='blogGridOne mt-20'>
 						{Array.from(Array(3).keys()).map((i) => (
-							<BlogCard key={i} slug={i} />
+							<BlogCard key={i} slug={i} img={`/assets/blog/img-${i + 1}.jpg`} />
 						))}
 					</div>
 					<div className='blogGridTwo mt-8'>
 						{Array.from(Array(2).keys()).map((i) => (
-							<BlogCard key={i} slug={i} />
+							<BlogCard key={i} slug={i} img={`/assets/blog/img-${i + 4}.jpg`} />
 						))}
 					</div>
 					<div className='bg-gray-100 py-16 my-20'>
 						<div className='blogGridOne'>
 							{Array.from(Array(3).keys()).map((i) => (
-								<BlogCard key={i} slug={i} />
+								<BlogCard key={i} slug={i} img={`/assets/blog/img-${i + 6}.jpg`} />
 							))}
 						</div>
 					</div>
 					<div className='blogGridTwo'>
 						{Array.from(Array(2).keys()).map((i) => (
-							<BlogCard key={i} slug={i} />
+							<BlogCard key={i} slug={i} img={`/assets/blog/img-${i + 6}.jpg`} />
 						))}
 					</div>
 				</div>

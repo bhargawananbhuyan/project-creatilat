@@ -176,6 +176,7 @@ export default function Contacto() {
 										src={`/assets/contacto-${i + 1}.png`}
 										layout='fill'
 										className='absolute'
+										alt=''
 									/>
 								</div>
 								<div>

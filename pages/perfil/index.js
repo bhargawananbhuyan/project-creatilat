@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import Layout from '../../src/components/layout/Layout'
 import SEO from '../../src/components/layout/SEO'
+import Image from 'next/image'
 
 const Index = () => {
 	return (
@@ -12,7 +13,14 @@ const Index = () => {
 			<div className='bg-gray-200 py-14'>
 				<div className='bg-white'>
 					<article className='max-w-lg mx-auto py-10 grid gap-5 place-items-center'>
-						<div className='h-[150px] w-[150px] bg-gray-200 rounded-full' />
+						<div className='h-[150px] w-[150px] bg-gray-200 rounded-full relative'>
+							<Image
+								src={'/assets/profile.jpg'}
+								layout='fill'
+								className='absolute'
+								alt=''
+							/>
+						</div>
 						<section className='text-center grid gap-2'>
 							<h1 className='text-xl font-bold'>María Abdo</h1>
 							<p className='text-2xl text-gray-400 font-light'>maria@gmail.com</p>
