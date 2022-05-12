@@ -47,6 +47,10 @@ const Drawer = () => {
 							title: 'Contacto',
 							link: '/contacto',
 						},
+						{
+							title: 'Iniciar sesion',
+							link: '/login',
+						},
 					].map((item, i) => (
 						<Menu.Item key={i}>
 							<Link href={item.link}>
