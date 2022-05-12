@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Productos({ productos }) {
 	return (
-		<div className='bg-[#F8F8F8]'>
+		<div className='bg-[#F8F8F8] px-5'>
 			<div className='productos__grid max-w-screen-xl mx-auto'>
 				{productos &&
 					productos?.map((p, i) => (

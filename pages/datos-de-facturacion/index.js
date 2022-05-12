@@ -8,7 +8,15 @@ export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Datos de facturacion' />
-			<article className='grid grid-cols-2 gap-x-20'>
+			<article className='grid md:grid-cols-2 gap-x-20 mt-10 mb-20 md:m-0'>
+				<div className='md:hidden'>
+					<Image
+						src={'/assets/datos.jpg'}
+						layout='fill'
+						className='absolute object-cover z-[-1] top-0 left-0'
+						alt=''
+					/>
+				</div>
 				<section>
 					<div className='max-w-2xl h-full bg-gray-200 relative'>
 						<Image
@@ -20,9 +28,9 @@ export default function Index() {
 					</div>
 				</section>
 
-				<section className='max-w-lg w-full grid gap-12 pt-12 pb-20'>
-					<section className='grid gap-2.5'>
-						<h1 className='text-[1.75rem] font-extrabold leading-normal'>
+				<section className='max-w-lg w-full grid gap-12 md:pt-12 md:pb-20 bg-white shadow-2xl md:shadow-none px-5 md:px-0 py-10'>
+					<section className='grid gap-2.5 text-center md:text-left'>
+						<h1 className='text-xl md:text-[1.75rem] font-extrabold leading-normal'>
 							Completa los datos para <br /> Generar tu factura
 						</h1>
 						<p>Asegúrate de llenar todos los campos correctamente.</p>

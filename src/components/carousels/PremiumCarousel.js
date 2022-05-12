@@ -33,24 +33,24 @@ const PremiumCarousel = () => {
 		<div>
 			<div className='absolute top-0 left-0 w-full h-full flex items-center justify-between'>
 				<button
-					className='-ml-16 bg-[#93d921] h-[30px] w-[30px] rounded-full text-white'
+					className='md:-ml-16 bg-[#93d921] h-[42px] w-[42px] z-[100] md:rounded-full text-white'
 					onClick={() => embla.scrollPrev()}
 				>
 					<FontAwesomeIcon icon={faChevronLeft} />
 				</button>
 				<button
-					className='-mr-16 bg-[#93d921] h-[30px] w-[30px] rounded-full text-white'
+					className='md:-mr-16 bg-[#93d921] h-[42px] w-[42px] z-[100] md:rounded-full text-white'
 					onClick={() => embla.scrollNext()}
 				>
 					<FontAwesomeIcon icon={faChevronRight} />
 				</button>
 			</div>
-			<div ref={emblaRef} className='overflow-hidden'>
-				<div className='flex gap-x-10'>
+			<div ref={emblaRef} className='overflow-hidden px-10 md:px-0'>
+				<div className='flex gap-x-5 md:gap-x-10'>
 					{['Interior libros', 'Empaque', 'Infografia'].map((item, i) => (
 						<section
 							key={i}
-							className='flex-[0_0_30%] h-[300px] flex flex-col items-center justify-evenly'
+							className='flex-[0_0_100%] md:flex-[0_0_30%] h-[300px] flex flex-col items-center justify-evenly'
 						>
 							<h5 className='font-bold'>{item}</h5>
 							<div className='relative w-full h-[250px]'>

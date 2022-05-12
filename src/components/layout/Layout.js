@@ -1,22 +1,23 @@
-import React from 'react'
-import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
 	faFacebookF,
 	faInstagram,
-	faYoutube,
+	faLinkedinIn,
 	faTwitter,
 	faWhatsapp,
-	faLinkedinIn,
+	faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
+import { faCartShopping, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
-import { faBars, faCartShopping, faPhone } from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
+import React from 'react'
+import Drawer from './Drawer'
 
 const Layout = ({ children }) => {
 	return (
 		<div className='w-screen'>
 			<>
-				<header className='hidden md:flex flex-col max-w-screen-xl mx-auto py-8'>
+				<header className='hidden px-5 md:flex flex-col max-w-screen-xl mx-auto py-8'>
 					<header className='flex justify-end gap-10'>
 						<div className='flex items-center gap-2.5'>
 							<FontAwesomeIcon icon={faPhone} className='text-sm' />
@@ -75,9 +76,9 @@ const Layout = ({ children }) => {
 				</header>
 
 				<header className='w-full flex px-5 py-5 shadow items-center justify-between md:hidden'>
-					<button className='px-2.5 py-1'>
-						<FontAwesomeIcon icon={faBars} />
-					</button>
+					<div className='relative'>
+						<Drawer />
+					</div>
 
 					<button className='px-2.5 py-1'>
 						<FontAwesomeIcon icon={faCartShopping} />
@@ -87,7 +88,7 @@ const Layout = ({ children }) => {
 			<main>{children}</main>
 			<footer>
 				<div className='bg-gray-100 py-14'>
-					<section className='flex flex-wrap gap-x-16 px-5 md:gap-x-24 gap-10 max-w-screen-xl mx-auto'>
+					<section className='flex flex-wrap gap-x-16 px-5 md:gap-x-20 gap-10 max-w-screen-xl mx-auto'>
 						<section className='grid gap-3.5'>
 							<h1 className='font-bold'>MI CUENTA</h1>
 							<div className='grid gap-2'>

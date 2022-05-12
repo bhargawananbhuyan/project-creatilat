@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function ProductosHeader({ isRoute }) {
 	return (
-		<div className='flex items-start justify-center gap-10'>
+		<div className='grid grid-cols-4 gap-x-5 md:flex md:items-start md:justify-center md:gap-10'>
 			{[
 				{
 					label: 'Logo e identidad',
@@ -43,13 +43,13 @@ export default function ProductosHeader({ isRoute }) {
 								className='grid place-items-center max-w-[125px] text-center gap-3.5'
 							>
 								<div
-									className={`h-[60px] w-[60px] ${
+									className={`h-[32px] w-[32px] md:h-[60px] md:w-[60px] ${
 										isRoute(item.label)
 											? 'bg-white bg-opacity-75'
 											: 'bg-blue-800 bg-opacity-25'
 									} rounded-full grid place-items-center`}
 								>
-									<div className='w-[24px] h-[24px] relative'>
+									<div className='w-[18px] h-[18px] md:w-[24px] md:h-[24px] relative'>
 										<Image
 											src={`/assets/${
 												isRoute(item.label) ? item.icon2 : item.icon1
@@ -60,11 +60,13 @@ export default function ProductosHeader({ isRoute }) {
 										/>
 									</div>
 								</div>
-								<p className='text-sm font-semibold text-white'>{item.label}</p>
+								<p className='text-xs md:text-sm font-semibold text-white'>
+									{item.label}
+								</p>
 							</section>
 
 							{isRoute(item.label) && (
-								<div className='absolute bottom-[-3rem] w-full grid place-items-center'>
+								<div className='hidden absolute bottom-[-3rem] w-full md:grid place-items-center'>
 									<div className='h-[15px] w-[15px] bg-white rotate-45' />
 								</div>
 							)}

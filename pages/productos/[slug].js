@@ -1,17 +1,16 @@
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useRouter } from 'next/router'
 import React from 'react'
+import SingleCarousel from '../../src/components/carousels/SingleCarousel'
 import InputField from '../../src/components/layout/InputField'
 import Layout from '../../src/components/layout/Layout'
-import ProductosHeader from '../../src/components/productos/ProductosHeader'
 import SEO from '../../src/components/layout/SEO'
-import ProductosSubHeader from '../../src/components/productos/ProductosSubHeader'
-import { useRouter } from 'next/router'
 import Productos from '../../src/components/productos/Productos'
-import axios from 'axios'
-import makeLink from '../../src/utils/makeLink'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import ProductosHeader from '../../src/components/productos/ProductosHeader'
+import ProductosSubHeader from '../../src/components/productos/ProductosSubHeader'
 import { productos as _productos } from '../../src/utils/data'
-import SingleCarousel from '../../src/components/carousels/SingleCarousel'
+import makeLink from '../../src/utils/makeLink'
 
 const titleRoutes = [
 	'logo-e-identidad',
@@ -63,7 +62,7 @@ export default function Slug({ productos, producto }) {
 			)}
 			{titleRoutes.includes(slug) ? (
 				<>
-					<section className='bg-[#4384F5] grid place-items-center gap-10 py-10'>
+					<section className='bg-[#4384F5] grid place-items-center gap-10 py-10 pb-5 md:pb-10 px-5'>
 						<h1 className='text-3xl font-bold text-white'>¿Qué necesitas diseñar?</h1>
 						<div className='max-w-lg w-full'>
 							<InputField
@@ -84,8 +83,8 @@ export default function Slug({ productos, producto }) {
 				!router.isFallback && (
 					<>
 						<div className='bg-[#f8f8f8] py-14'>
-							<section className='max-w-screen-xl mx-auto grid grid-cols-2 items-center'>
-								<div className='grid gap-10'>
+							<section className='max-w-screen-xl mx-auto grid px-5 md:grid-cols-2 gap-y-10 items-center'>
+								<div className='grid gap-10 place-items-center md:place-items-start text-center md:text-left'>
 									<section className='grid gap-5'>
 										<h1 className='text-5xl font-bold text-[#9419E8] underline underline-offset-[5px]'>
 											{producto?.title}
@@ -112,7 +111,7 @@ export default function Slug({ productos, producto }) {
 							</section>
 						</div>
 
-						<div className='max-w-screen-xl mx-auto grid gap-16 pt-14 pb-24'>
+						<div className='max-w-screen-xl mx-auto grid gap-16 pt-14 pb-24 px-5'>
 							<section className='max-w-md grid gap-5'>
 								<h2 className='text-4xl font-bold'>Precio</h2>
 								<p>
@@ -121,12 +120,12 @@ export default function Slug({ productos, producto }) {
 								</p>
 							</section>
 
-							<div className='grid grid-cols-5 gap-5'>
+							<div className='flex md:grid grid-cols-5 gap-5 overflow-scroll hide-scrollbar py-5'>
 								<section>
 									<div className='h-[8px]' />
 									<div className='h-[225px]' />
 
-									<div className='grid gap-3.5'>
+									<div className='grid gap-3.5 font-semibold md:font-normal px-5 md:px-0'>
 										<span>Propuestas</span>
 										<span>Revisiones</span>
 										<div className='h-[1px] w-full bg-gray-200' />
@@ -138,7 +137,7 @@ export default function Slug({ productos, producto }) {
 								{producto?.precio?.map((_item, i) => (
 									<section
 										key={i}
-										className={`rounded-t-md overflow-hidden shadow-[0px_0px_15px_-5px_rgba(0,0,0,.25)] ${
+										className={`rounded-t-md min-w-[300px] md:min-w-full overflow-hidden shadow-[0px_0px_15px_-5px_rgba(0,0,0,.25)] ${
 											_item.value === 'Contáctanos'
 												? 'bg-gray-100'
 												: 'bg-white'

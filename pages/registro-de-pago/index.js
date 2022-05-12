@@ -11,8 +11,8 @@ export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Registro de Pago' />
-			<article className='grid grid-cols-2 gap-x-20'>
-				<div className='max-w-screen-sm mx-auto pl-8'>
+			<article className='grid md:grid-cols-2 gap-x-20'>
+				<div className='max-w-screen-sm mx-auto md:pl-8 z-[100]'>
 					{active === 1 ? (
 						<LoginForm active={active} setActive={setActive} />
 					) : (
@@ -24,6 +24,16 @@ export default function Index() {
 						/>
 					)}
 				</div>
+
+				<div className='md:hidden'>
+					<Image
+						src={`/assets/disco.png`}
+						layout='fill'
+						className='absolute object-cover top-0 left-0 z-[-1]'
+						alt=''
+					/>
+				</div>
+
 				<div className='bg-gray-200 relative'>
 					<Image
 						src={`/assets/disco.png`}

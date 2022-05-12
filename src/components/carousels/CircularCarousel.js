@@ -2,15 +2,14 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 import { useState, useEffect, useCallback } from 'react'
 
-const CircularCarousel = () => {
-	const [carouselRef, embla] = useEmblaCarousel({ loop: false })
+const CircularCarousel = ({ selectedIndex, setSelectedIndex }) => {
+	const [carouselRef, embla] = useEmblaCarousel({ loop: true })
 	const [scrollSnaps, setScrollSnaps] = useState([])
-	const [selectedIndex, setSelectedIndex] = useState(0)
 
 	const onSelect = useCallback(() => {
 		if (!embla) return
 		setSelectedIndex(embla.selectedScrollSnap())
-	}, [embla])
+	}, [embla, setSelectedIndex])
 
 	const scrollTo = useCallback(
 		(index) => {
@@ -33,7 +32,7 @@ const CircularCarousel = () => {
 					{Array.from(Array(4).keys()).map((i) => (
 						<div
 							key={i}
-							className='h-[300px] sm:h-[420px] flex-shrink-0 relative gap-x-5 flex-[0_0_100%]'
+							className='h-[300px] sm:h-[420px] flex-shrink-0 relative gap-x-5 flex-[0_0_100%] cursor-grab'
 						>
 							<Image
 								src={`/assets/homepage-1.jpg`}

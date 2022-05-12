@@ -10,9 +10,9 @@ const Index = () => {
 		<Layout>
 			<SEO title='Paquetes' />
 
-			<article className='max-w-screen-xl mx-auto'>
-				<section className='grid place-items-center gap-y-3.5'>
-					<h1 className='text-4xl font-bold'>El paquete que buscabas</h1>
+			<article className='max-w-screen-xl mx-auto px-5'>
+				<section className='grid place-items-center gap-y-3.5 text-center md:text-left mt-10'>
+					<h1 className='text-2xl md:text-4xl font-bold'>El paquete que buscabas</h1>
 					<p>Encuentra el paquete que se ajusta a tus necesidades.</p>
 				</section>
 

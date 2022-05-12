@@ -22,8 +22,8 @@ const Blog = () => {
 		<Layout>
 			<SEO title={`Blogs | ${slug}`} />
 
-			<article className='grid gap-y-14 text-[#77838F]'>
-				<div className='h-[350px] w-full bg-gray-200 relative'>
+			<article className='grid gap-y-10 md:gap-y-14 text-[#77838F]'>
+				<div className='h-[200px] md:h-[350px] w-full bg-gray-200 relative'>
 					<Image
 						src={'/assets/blog/banner-1.png'}
 						layout='fill'
@@ -31,7 +31,7 @@ const Blog = () => {
 						alt=''
 					/>
 				</div>
-				<div className='max-w-screen-md mx-auto grid gap-y-14'>
+				<div className='max-w-screen-md mx-auto grid gap-y-14 px-5 md:px-0'>
 					<section className='grid place-items-center text-center gap-y-3.5'>
 						<h1 className='text-3xl font-semibold text-black'>Título del Blog</h1>
 						<h2 className='text-lg text-black'>Subtítulo del Blog</h2>
@@ -43,7 +43,7 @@ const Blog = () => {
 						</p>
 					</section>
 
-					<section className='border-t border-b flex items-center justify-between py-5'>
+					<section className='border-t border-b flex flex-col md:flex-row gap-y-5 items-center justify-between py-5'>
 						<div className='flex items-center gap-x-3.5'>
 							<div className='w-[60px] h-[60px] bg-gray-300 rounded-full relative'>
 								<Image
@@ -74,7 +74,7 @@ const Blog = () => {
 					</section>
 				</div>
 
-				<p className='max-w-screen-md mx-auto leading-relaxed'>
+				<p className='max-w-screen-md mx-auto leading-relaxed px-5'>
 					It has survived not only five centuries, but also the leap into electronic
 					typesetting, remaining essentially unchanged. It was popularised in the 1960s
 					with the release of Letraset sheets containing Lorem Ipsum passages, and more
@@ -82,7 +82,7 @@ const Blog = () => {
 					versions of Lorem Ipsum.
 				</p>
 
-				<div className='h-[300px] bg-gray-200 max-w-screen-lg w-full mx-auto relative'>
+				<div className='h-[200px] md:h-[300px] bg-gray-200 max-w-screen-lg w-full mx-auto relative'>
 					<Image
 						src={'/assets/blog/banner-2.png'}
 						layout='fill'
@@ -91,7 +91,7 @@ const Blog = () => {
 					/>
 				</div>
 
-				<p className='max-w-screen-md mx-auto leading-relaxed'>
+				<p className='max-w-screen-md mx-auto leading-relaxed px-5'>
 					Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
 					in a piece of classical Latin literature from 45 BC, making it over 2000 years
 					old. Richard McClintock, a Latin professor at Hampden-Sydney College in
@@ -102,8 +102,8 @@ const Blog = () => {
 					of Good and Evil) by Cicero, written in 45 BC.)
 				</p>
 
-				<div className='relative max-w-screen-md mx-auto h-[200px] w-full bg-[#F4F8FF] text-black rounded text-2xl grid place-items-center text-center leading-normal font-bold'>
-					<div className='grid gap-y-5'>
+				<div className='relative max-w-screen-md mx-auto h-[250px] md:h-[200px] w-full bg-[#F4F8FF] text-black rounded text-lg md:text-2xl grid place-items-center text-center leading-normal font-bold'>
+					<div className='grid gap-y-2.5 md:gap-y-5'>
 						<div>
 							El diseño no es solo cómo se ve y se siente.
 							<br />
@@ -122,7 +122,7 @@ const Blog = () => {
 					</div>
 				</div>
 
-				<section className='max-w-screen-md mx-auto leading-relaxed'>
+				<section className='max-w-screen-md mx-auto leading-relaxed px-5 md:px-0'>
 					<h2 className='text-2xl text-black font-semibold mb-3.5'>
 						Subtítulo del artículo
 					</h2>
@@ -154,13 +154,13 @@ const Blog = () => {
 					/>
 				</div>
 
-				<p className='max-w-screen-md mx-auto'>
+				<p className='max-w-screen-md mx-auto px-5 md:px-0'>
 					There are many variations of passages of Lorem Ipsum available, but the majority
 					have suffered alteration in some form, by injected humour, or randomised words
 					which don&apos;t look even slightly believable.
 				</p>
 
-				<div className='max-w-screen-md mx-auto grid place-items-center border-t'>
+				<div className='max-w-screen-md mx-auto grid place-items-center border-t px-5 md:px-0'>
 					<section className='max-w-lg grid gap-y-5 text-center leading-relaxed py-10'>
 						<h2 className='text-[#FF2E00] font-bold'>Comentarios</h2>
 						<h3 className='text-xl text-black'>
@@ -246,7 +246,7 @@ const Blog = () => {
 					</div>
 				</div>
 
-				<form className='text-black max-w-screen-md mx-auto w-full grid gap-y-8'>
+				<form className='text-black max-w-screen-md mx-auto w-full grid gap-y-8 px-5 md:px-0'>
 					<h2 className='text-3xl font-semibold'>Comparte tu comentario</h2>
 
 					<div className='grid gap-y-2'>
@@ -273,7 +273,7 @@ const Blog = () => {
 					</button>
 				</form>
 
-				<div className='bg-[#F7FAFD] pt-20 pb-24'>
+				<div className='bg-[#F7FAFD] pt-20 pb-24 px-5 md:px-0'>
 					<section className='max-w-lg mx-auto text-center grid gap-y-2.5'>
 						<h2 className='text-black text-2xl'>Recibe las noticias en tu correo</h2>
 						<p className='leading-relaxed'>

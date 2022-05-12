@@ -1,4 +1,4 @@
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import React from 'react'
@@ -8,33 +8,60 @@ import Layout from '../src/components/layout/Layout'
 import SEO from '../src/components/layout/SEO'
 
 export default function Home() {
+	const [selectedIndex, setSelectedIndex] = React.useState(0)
+	const [introColor, setIntroColor] = React.useState({
+		text: 'text-green-500',
+		bg: 'bg-green-500',
+	})
+
+	React.useEffect(() => {
+		selectedIndex === 0
+			? setIntroColor({ text: 'text-green-500', bg: 'bg-green-500' })
+			: selectedIndex === 1
+			? setIntroColor({ text: 'text-red-500', bg: 'bg-red-500' })
+			: selectedIndex === 2
+			? setIntroColor({ text: 'text-blue-500', bg: 'bg-blue-500' })
+			: setIntroColor({ text: 'text-yellow-500', bg: 'bg-yellow-500' })
+	}, [selectedIndex])
+
 	return (
 		<>
 			<SEO />
 			<Layout>
 				<div className='max-w-screen-xl mx-auto'>
-					<div className='flex items-center justify-center gap-y-10 md:gap-y-0 md:justify-between flex-wrap-reverse mt-10 px-5'>
-						<CircularCarousel />
+					<div className='flex items-center justify-center gap-y-10 md:gap-x-10 md:gap-y-0 md:justify-between flex-col-reverse md:flex-row mt-10 px-5'>
+						<CircularCarousel
+							selectedIndex={selectedIndex}
+							setSelectedIndex={setSelectedIndex}
+						/>
 
 						<section className='grid gap-5 text-center md:text-left'>
 							<h1
-								className={`text-3xl md:text-6xl text-green-600 font-bold leading-tight max-w-[600px] w-full`}
+								className={`text-2xl md:text-4xl lg:text-6xl ${introColor.text} transition-colors title-lh font-bold max-w-[600px] w-full`}
 							>
 								Líderes en servicios de diseño
 							</h1>
-							<div className={`hidden md:block w-[75px] h-[5px] bg-green-600`} />
-							<p className='text-[18px]'>
+							<div
+								className={`hidden md:block w-[75px] h-[5px] ${introColor.bg} transition-colors`}
+							/>
+							<p className='text-base lg:text-[18px] leading-relaxed'>
 								Nuestros servicios lo ayudarán a crear la presencia y la marca
 								perfecta.
 							</p>
 
-							<section className='flex flex-col items-center md:flex-row gap-3.5 mt-2.5 md:mt-8'>
-								<input
-									placeholder='¿Qué necesitas diseñar?'
-									className='border pt-2.5 pb-3 px-5 w-full rounded-lg outline-none'
-								/>
+							<section className='flex flex-col items-center md:flex-row gap-3.5 mt-2.5 lg:mt-8'>
+								<div className='relative w-full'>
+									<input
+										placeholder='¿Qué necesitas diseñar?'
+										className={`w-full border pl-10 px-5 pt-2.5 pb-3 rounded-md outline-none`}
+									/>
+									<FontAwesomeIcon
+										icon={faSearch}
+										className='absolute top-[1rem] left-3.5 text-gray-400'
+									/>
+								</div>
 								<button
-									className={`bg-green-600 px-14 py-2.5 text-white rounded-full shadow-xl hover:shadow-none`}
+									className={`${introColor.bg} transition-colors px-14 py-2.5 text-white rounded-full shadow-xl hover:shadow-none`}
 								>
 									Buscar
 								</button>

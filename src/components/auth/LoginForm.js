@@ -7,8 +7,10 @@ function LoginForm({
 	title = 'Conéctate y obtén todos los beneficios de nuestros servicios',
 }) {
 	return (
-		<section className='max-w-lg w-full grid gap-12 pt-12 pb-20'>
-			<h1 className='text-[1.75rem] font-extrabold leading-normal'>{title}</h1>
+		<section className='max-w-lg w-full grid gap-8 md:gap-12 mt-10 mb-20 md:my-0 py-10 md:pt-12 md:pb-20 px-5 bg-white place-items-center md:place-items-start'>
+			<h1 className='text-xl md:text-[1.75rem] font-extrabold leading-normal text-center md:text-left'>
+				{title}
+			</h1>
 
 			<div className='flex gap-10'>
 				<button
@@ -32,7 +34,7 @@ function LoginForm({
 					Registrarse
 				</button>
 			</div>
-			<div className='grid gap-2.5 text-sm'>
+			<div className='grid gap-2.5 text-sm w-full'>
 				<button className='py-3.5 px-5 bg-gray-100 rounded-lg text-left flex items-center gap-3.5'>
 					<div className='h-[21px] w-[21px] relative'>
 						<Image
@@ -57,7 +59,7 @@ function LoginForm({
 				</button>
 			</div>
 
-			<form className='grid gap-2.5'>
+			<form className='grid gap-2.5 w-full'>
 				<input
 					placeholder='Correo electrónico'
 					className='border px-5 py-2.5 outline-none rounded-lg'

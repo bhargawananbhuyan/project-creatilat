@@ -8,8 +8,8 @@ export default function Index() {
 		<Layout>
 			<div>
 				<div className='bg-gray-200'>
-					<section className='max-w-screen-xl mx-auto py-14 grid place-items-center gap-10'>
-						<h1 className='text-4xl font-extrabold'>
+					<section className='max-w-screen-xl mx-auto py-8 md:py-14 grid place-items-center text-center md:text-left gap-5 md:gap-10'>
+						<h1 className='text-2xl md:text-4xl font-extrabold'>
 							Recomienda nuestros productos y gana más.
 						</h1>
 						<button className='bg-yellow-500 text-white font-semibold px-6 py-3.5 rounded-full shadow-xl hover:shadow-none'>
@@ -19,17 +19,19 @@ export default function Index() {
 				</div>
 
 				<div className='max-w-screen-xl mx-auto'>
-					<section className='py-20 grid gap-5'>
-						<h2 className='text-2xl font-bold ml-10'>
-							¿Qué es el programa de afiliados?
-						</h2>
-						<p className='max-w-3xl'>
-							Es un programa donde afiliados promueven nuestros servicios y en el que
-							pueden ganar increíbles comisiones. Con nuestro programa de afiliados
-							todos ganan.
-						</p>
+					<section className='py-10 md:py-20 grid gap-5'>
+						<section className='grid gap-5 px-5 text-center md:text-left md:px-0'>
+							<h2 className='text-2xl font-bold md:ml-10'>
+								¿Qué es el programa de afiliados?
+							</h2>
+							<p className='max-w-3xl'>
+								Es un programa donde afiliados promueven nuestros servicios y en el
+								que pueden ganar increíbles comisiones. Con nuestro programa de
+								afiliados todos ganan.
+							</p>
+						</section>
 
-						<section className='grid grid-cols-3 place-items-center mt-8'>
+						<section className='grid md:grid-cols-3 gap-10 md:gap-0 place-items-center mt-8'>
 							<div className='grid place-items-center text-center gap-6'>
 								<div className='h-[36px] w-[36px] relative'>
 									<Image
@@ -92,8 +94,8 @@ export default function Index() {
 						</section>
 					</section>
 
-					<section>
-						<div className='h-[350px] w-full'>
+					<section className='px-5 md:px-0'>
+						<div className='md:h-[350px] w-full'>
 							<SingleCarousel
 								fullScreen
 								images={[
@@ -106,11 +108,11 @@ export default function Index() {
 						</div>
 					</section>
 
-					<section className='py-20 grid gap-12'>
+					<section className='py-14 md:py-20 grid gap-12 px-5 md:px-0'>
 						<h4 className='text-2xl font-bold text-blue-500 underline underline-offset-4 decoration-[3.5px]'>
 							Niveles de afiliación
 						</h4>
-						<div className='grid grid-cols-3 place-items-center gap-16'>
+						<div className='grid md:grid-cols-3 place-items-center gap-8 md:gap-16'>
 							<section className='grid place-items-center gap-5 text-center'>
 								<h5 className='text-lg font-bold'>Nivel Plata</h5>
 								<div className='h-[75px] w-[75px] relative'>
@@ -164,8 +166,8 @@ export default function Index() {
 				</div>
 
 				<div className='bg-[#C79936]'>
-					<section className='max-w-screen-xl mx-auto grid place-items-center gap-10 py-16'>
-						<h1 className='text-[1.75rem] font-extrabold text-white'>
+					<section className='max-w-screen-xl mx-auto grid place-items-center gap-5 md:gap-10 md:py-16 py-10'>
+						<h1 className='text-xl leading-relaxed px-5 text-center md:text-left md:text-[1.75rem] font-extrabold text-white'>
 							¿Estas listo para ganar increíbles comisiones y ser parte de nuestros
 							afiliados?
 						</h1>

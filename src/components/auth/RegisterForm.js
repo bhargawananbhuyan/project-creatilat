@@ -63,9 +63,9 @@ export default function RegisterForm({
 	}
 
 	return (
-		<section className='max-w-lg w-full grid gap-10 pt-12 pb-20'>
-			<section className='grid gap-2.5'>
-				<h1 className='text-[1.75rem] font-extrabold leading-normal'>{title}</h1>
+		<section className='max-w-lg w-full grid gap-10 py-10 mt-10 mb-20 md:pt-12 md:pb-20 px-5 bg-white place-items-center md:place-items-start'>
+			<section className='grid gap-2.5 text-center md:text-left'>
+				<h1 className='text-xl md:text-[1.75rem] font-extrabold leading-normal'>{title}</h1>
 				<p>{subtitle}</p>
 			</section>
 
@@ -91,7 +91,7 @@ export default function RegisterForm({
 					Registrarse
 				</button>
 			</div>
-			<div className='grid gap-2.5 text-sm'>
+			<div className='grid gap-2.5 text-sm w-full'>
 				<button className='py-3.5 px-5 bg-gray-100 rounded-lg text-left flex items-center gap-3.5'>
 					<div className='h-[21px] w-[21px] relative'>
 						<Image
@@ -116,7 +116,7 @@ export default function RegisterForm({
 				</button>
 			</div>
 
-			<div className='_divider'>O completa tus datos</div>
+			<div className='_divider w-full'>O completa tus datos</div>
 
 			<form className='grid gap-2.5' onSubmit={handleFormSubmit}>
 				<input

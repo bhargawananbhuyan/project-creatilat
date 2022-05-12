@@ -162,10 +162,10 @@ const subHeaderItems = [
 export default function ProductosSubHeader({ route }) {
 	return (
 		<div
-			className={`flex justify-center ${subHeaderItems
+			className={`flex justify-center px-5 ${subHeaderItems
 				.filter((item) => item.route === route)
 				.map((_item) =>
-					_item.items.length > 3 ? 'gap-5' : 'gap-10'
+					_item.items.length > 3 ? 'gap-5' : 'gap-5 md:gap-10'
 				)} py-14 gap-y-10 overflow-x-scroll hide-scrollbar flex-wrap`}
 		>
 			{subHeaderItems
@@ -206,8 +206,8 @@ export default function ProductosSubHeader({ route }) {
 					) : (
 						_item.items.map((__item, i) => (
 							<Link key={i} href={`/productos/${__item.link}`}>
-								<a className='w-[200px] h-[225px] flex-shrink-0 relative grid place-items-center'>
-									<div className='bg-gray-200 w-[160px] h-full rounded-[50px] relative'>
+								<a className='w-[100px] md:w-[200px] h-[125px] md:h-[225px] flex-shrink-0 relative grid place-items-center'>
+									<div className='bg-gray-200 w-[80px] md:w-[160px] h-full rounded-[50px] relative'>
 										<Image
 											src={`/assets/products/${__item.img}`}
 											layout='fill'
@@ -215,7 +215,7 @@ export default function ProductosSubHeader({ route }) {
 											alt=''
 										/>
 									</div>
-									<div className='absolute bottom-0 left-0 w-[200px] bg-white shadow-xl rounded-xl px-5 py-3.5 text-xs text-center font-semibold bg-opacity-95'>
+									<div className='absolute -bottom-2.5 left-0 w-[100px] md:w-[200px] bg-white shadow-xl rounded-xl px-5 py-3.5 text-xs text-center font-semibold bg-opacity-95'>
 										{__item.title}
 									</div>
 								</a>

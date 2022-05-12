@@ -67,8 +67,8 @@ const Index = () => {
 		<Layout>
 			<SEO title='Como funciona' />
 
-			<div className='max-w-screen-xl mx-auto relative'>
-				<h1 className='text-5xl text-center font-extrabold mt-5 mb-10 text-gray-600'>
+			<div className='max-w-screen-xl mx-auto relative px-5 md:px-0'>
+				<h1 className='text-2xl md:text-5xl text-center font-extrabold mt-12 md:mt-5 mb-10 text-gray-600'>
 					Como funciona
 				</h1>
 				<div className='max-w-md mx-auto grid grid-cols-2'>
@@ -91,34 +91,44 @@ const Index = () => {
 				</div>
 				{active === 0 ? (
 					<>
-						<div className='grid grid-cols-4 my-16'>
-							{content1.map((item, i) => (
-								<div key={i}>
-									<section className='grid place-items-center text-center gap-y-10'>
-										<div className='h-[100px] w-[100px] relative'>
-											<Image
-												src={`/assets/como-functiona/${item.img}.png`}
-												layout='fill'
-												className='absolute'
-												alt=''
-											/>
-										</div>
-										<h1 className='h-[60px] w-[60px] grid place-items-center border-[5px] border-yellow-400 rounded-full text-2xl font-extrabold bg-white'>
-											0{i + 1}
-										</h1>
-										<section>
-											<h2 className='text-sm font-extrabold'>{item.title}</h2>
-											<p className='grid text-sm'>
-												<span>{item.subtitle}</span>
-												<span className='mt-2.5'>{item.extra1}</span>
-												<em>{item.extra2}</em>
-											</p>
+						<div className='relative'>
+							<div className='grid md:grid-cols-4 my-16 gap-y-10 md:gap-0'>
+								{content1.map((item, i) => (
+									<div key={i}>
+										<section className='grid grid-cols-[60px_60px_auto] md:grid-cols-1 gap-x-3.5 md:place-items-center text-left md:text-center gap-y-10'>
+											<div className='h-[60px] md:h-[100px] w-[60px] md:w-[100px] relative'>
+												<Image
+													src={`/assets/como-functiona/${item.img}.png`}
+													layout='fill'
+													className='absolute'
+													alt=''
+												/>
+											</div>
+											<h1 className='h-[60px] w-[60px] grid place-items-center border-[5px] border-yellow-400 rounded-full text-2xl font-extrabold bg-white'>
+												0{i + 1}
+											</h1>
+											<section className='ml-3.5 md:m-0'>
+												<h2 className='text-sm font-extrabold'>
+													{item.title}
+												</h2>
+												<p className='grid text-sm'>
+													<span>{item.subtitle}</span>
+													<span className='mt-2.5'>{item.extra1}</span>
+													<em>{item.extra2}</em>
+												</p>
+											</section>
 										</section>
-									</section>
+									</div>
+								))}
+							</div>
+							<div className='md:hidden block h-full w-[5px] bg-gray-300 absolute top-[-1.5rem] left-[6.35rem] z-[-1]'>
+								<div className='relative h-full'>
+									<div className='h-[1rem] w-[1rem] bg-gray-300 rounded-full absolute top-[-.42rem] left-[-6px]' />
+									<div className='h-[1rem] w-[1rem] bg-gray-300 rounded-full absolute bottom-[-.42rem] left-[-6px]' />
 								</div>
-							))}
+							</div>
 						</div>
-						<div className='h-[5px] w-full bg-gray-300 absolute bottom-[10rem] z-[-1]'>
+						<div className='hidden xl:block h-[5px] w-full bg-gray-300 absolute bottom-[10rem] z-[-1]'>
 							<div className='w-full relative'>
 								<div className='h-[1rem] w-[1rem] bg-gray-300 rounded-full absolute top-[-.37rem] left-[-5px]' />
 								<div className='h-[1rem] w-[1rem] bg-gray-300 rounded-full absolute top-[-.37rem] right-[-5px]' />
@@ -127,34 +137,45 @@ const Index = () => {
 					</>
 				) : (
 					<>
-						<div className='grid grid-cols-5 my-16'>
-							{content2.map((item, i) => (
-								<div key={i}>
-									<section className='grid place-items-center text-center gap-y-10'>
-										<div className='h-[100px] w-[100px] relative'>
-											<Image
-												src={`/assets/como-functiona/${item.img}.png`}
-												layout='fill'
-												className='absolute'
-												alt=''
-											/>
-										</div>
-										<h1 className='h-[60px] w-[60px] grid place-items-center border-[5px] border-yellow-400 rounded-full text-2xl font-extrabold bg-white'>
-											0{i + 1}
-										</h1>
-										<section>
-											<h2 className='text-sm font-extrabold'>{item.title}</h2>
-											<p className='grid text-sm'>
-												<span>{item.subtitle}</span>
-												<span className='mt-2.5'>{item.extra1}</span>
-												<em>{item.extra2}</em>
-											</p>
+						<div className='relative'>
+							<div className='grid md:grid-cols-5 my-16 gap-y-10 md:gap-0'>
+								{content2.map((item, i) => (
+									<div key={i}>
+										<section className='grid grid-cols-[60px_60px_auto] md:grid-cols-1 gap-x-3.5 md:place-items-center text-left md:text-center gap-y-10'>
+											<div className='h-[60px] md:h-[100px] w-[60px] md:w-[100px] relative'>
+												<Image
+													src={`/assets/como-functiona/${item.img}.png`}
+													layout='fill'
+													className='absolute'
+													alt=''
+												/>
+											</div>
+											<h1 className='h-[60px] w-[60px] grid place-items-center border-[5px] border-yellow-400 rounded-full text-2xl font-extrabold bg-white'>
+												0{i + 1}
+											</h1>
+											<section className='ml-3.5 md:m-0'>
+												<h2 className='text-sm font-extrabold'>
+													{item.title}
+												</h2>
+												<p className='grid text-sm'>
+													<span>{item.subtitle}</span>
+													<span className='mt-2.5'>{item.extra1}</span>
+													<em>{item.extra2}</em>
+												</p>
+											</section>
 										</section>
-									</section>
+									</div>
+								))}
+							</div>
+
+							<div className='md:hidden block h-full w-[5px] bg-gray-300 absolute top-[-1.5rem] left-[6.35rem] z-[-1]'>
+								<div className='relative h-full'>
+									<div className='h-[1rem] w-[1rem] bg-gray-300 rounded-full absolute top-[-.42rem] left-[-6px]' />
+									<div className='h-[1rem] w-[1rem] bg-gray-300 rounded-full absolute bottom-[-.42rem] left-[-6px]' />
 								</div>
-							))}
+							</div>
 						</div>
-						<div className='h-[5px] w-full bg-gray-300 absolute bottom-[9.8rem] z-[-1]'>
+						<div className='hidden xl:block h-[5px] w-full bg-gray-300 absolute bottom-[9.8rem] z-[-1]'>
 							<div className='w-full relative'>
 								<div className='h-[1rem] w-[1rem] bg-gray-300 rounded-full absolute top-[-.37rem] left-[-5px]' />
 								<div className='h-[1rem] w-[1rem] bg-gray-300 rounded-full absolute top-[-.37rem] right-[-5px]' />

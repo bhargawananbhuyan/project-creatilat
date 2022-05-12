@@ -13,7 +13,9 @@ const Stepper = ({ titles, active, done, setActive, setDone }) => {
 				<label
 					key={i}
 					htmlFor={`registroStep-${i}`}
-					className='flex items-center gap-x-2 text-sm font-semibold cursor-pointer'
+					className={`grid place-items-center md:flex items-center gap-2 text-sm font-semibold cursor-pointer ${
+						i === 2 && 'mt-1.5 md:mt-0'
+					}`}
 				>
 					<span
 						className={`h-[30px] w-[30px] ${
@@ -23,7 +25,7 @@ const Stepper = ({ titles, active, done, setActive, setDone }) => {
 						{i + 1}
 					</span>
 					<span
-						className={`${
+						className={`max-w-[60px] md:max-w-full text-center md:text-left ${
 							active === i || done.includes(i) ? 'text-black' : 'text-gray-300'
 						}`}
 					>
@@ -59,8 +61,8 @@ const Cart = () => {
 
 			{loading ? (
 				<div className='grid place-items-center pt-16 pb-32 gap-y-10'>
-					<h1 className='text-4xl font-bold'>Estamos procesando tu pago</h1>
-					<div className='h-[300px] w-[450px] bg-gray-200 relative'>
+					<h1 className='text-2xl md:text-4xl font-bold'>Estamos procesando tu pago</h1>
+					<div className='w-[300px] h-[200px] md:h-[300px] md:w-[450px] relative'>
 						<Image
 							src={'/assets/loading.jpg'}
 							layout='fill'
@@ -72,9 +74,9 @@ const Cart = () => {
 			) : (
 				<>
 					{active === 0 || active === 1 ? (
-						<div className='grid grid-cols-2 xl:grid-cols-5'>
-							<div className='xl:col-span-3 max-w-2xl w-full mx-auto py-20'>
-								<div className='grid place-items-center'>
+						<div className='grid md:grid-cols-2 xl:grid-cols-5'>
+							<div className='xl:col-span-3 max-w-2xl w-full mx-auto py-10 md:py-20'>
+								<div className='grid place-items-center px-5'>
 									<Stepper
 										titles={['Pedido', 'Pago', 'Comienza tu orden']}
 										active={active}
@@ -85,10 +87,10 @@ const Cart = () => {
 								</div>
 
 								{active === 0 && (
-									<div className='mt-14'>
+									<div className='mt-14 px-5 md:px-0'>
 										<section className='grid gap-y-5'>
 											<h2 className='text-2xl font-bold'>Mi carrito</h2>
-											<div className='flex gap-x-20 items-start'>
+											<div className='flex flex-col md:flex-row gap-x-20 gap-y-10 items-start'>
 												<section className='flex items-center gap-x-8'>
 													<div className='h-[120px] w-[120px] bg-gray-200 flex-shrink-0 relative'>
 														<Image
@@ -148,7 +150,7 @@ const Cart = () => {
 									</div>
 								)}
 								{active === 1 && (
-									<div className='mt-14 grid gap-y-10'>
+									<div className='mt-14 grid gap-y-10 px-5 md:px-0'>
 										<section>
 											<div className='grid gap-y-3.5'>
 												<div className='flex items-center justify-between'>
@@ -258,9 +260,11 @@ const Cart = () => {
 									</div>
 								)}
 							</div>
-							<div className='bg-gray-200 xl:col-span-2 p-10'>
-								<section className='grid gap-5'>
-									<h1 className='text-4xl font-bold'>Resumen del pedido</h1>
+							<div className='bg-gray-200 xl:col-span-2 md:p-10'>
+								<section className='grid gap-5 p-8 pb-0 md:p-0'>
+									<h1 className='text-2xl md:text-4xl font-bold'>
+										Resumen del pedido
+									</h1>
 									<hr className='border-t border-gray-300' />
 									<div>
 										<div className='flex items-center justify-between'>
@@ -284,7 +288,7 @@ const Cart = () => {
 
 								<section>
 									{active === 0 ? (
-										<div className='grid gap-y-5 mt-10'>
+										<div className='grid gap-y-5 my-10 px-5 md:px-0'>
 											<div className='grid gap-y-2.5 text-sm'>
 												<h6>Tarjeta de débito o crédito</h6>
 												<div className='flex gap-x-5'>
@@ -316,9 +320,9 @@ const Cart = () => {
 											</div>
 										</div>
 									) : active === 1 ? (
-										<div className='bg-white px-10 py-8 grid gap-y-8 mt-10'>
+										<div className='bg-white px-5 md:px-10 py-8 grid gap-y-8 mt-10'>
 											<h5 className='text-lg'>Resumen del carrito</h5>
-											<section className='flex items-center gap-x-5'>
+											<section className='flex items-center gap-x-8'>
 												<div className='h-[120px] w-[120px] bg-gray-200 flex-shrink-0 relative'>
 													<Image
 														src={'/assets/pink-dummy.jpg'}
@@ -361,7 +365,7 @@ const Cart = () => {
 								<h1 className='text-4xl font-bold'>¡Pago exitoso!</h1>
 								<p>Te hemos enviado tu formulario.</p>
 							</section>
-							<div className='w-[450px] h-[300px] bg-gray-200 relative'>
+							<div className='w-[300px] md:w-[450px] h-[200px] md:h-[300px] relative'>
 								<Image
 									src={'/assets/exit.jpg'}
 									layout='fill'

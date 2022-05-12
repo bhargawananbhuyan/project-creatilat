@@ -10,13 +10,13 @@ export default function Index() {
 		<Layout>
 			<SEO title='Preguntas Frecuentes' />
 			<div className='max-w-screen-lg mx-auto'>
-				<div className='grid grid-cols-2 gap-10 pt-8 pb-20 items-center'>
-					<div className='grid gap-10'>
+				<div className='grid md:grid-cols-2 gap-10 pt-8 pb-20 items-center'>
+					<div className='grid gap-10 place-items-center md:place-items-start'>
 						<section className='max-w-xl grid gap-5'>
 							<h1 className='text-3xl font-bold'>¿Aún tienes dudas?</h1>
 							<p>No te preocupes, nosotros te ayudamos.</p>
 						</section>
-						<div className='w-[400px] h-[400px] bg-gray-200 relative'>
+						<div className='w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-gray-200 relative'>
 							<Image
 								src={'/assets/preguntas.jpg'}
 								layout='fill'

@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-
 * {
-	@apply font-montserrat;
+	@apply font-montserrat !important;
 }
 
 body {
@@ -42,4 +39,19 @@ details summary::-webkit-details-marker {
 	@apply grid gap-x-14 gap-y-20 pt-20 pb-24;
 	grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
 	grid-auto-rows: 275px;
+}
+
+.title-lh {
+	line-height: 1.1 !important;
+}
+
+@media (max-width: 768px) {
+	.productos__grid {
+		@apply grid gap-x-5 gap-y-16 pt-20 pb-24;
+		grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+		grid-auto-rows: 200px;
+	}
+	.title-lh {
+		line-height: 1.5 !important;
+	}
 }
