@@ -102,7 +102,7 @@ const Blog = () => {
 					of Good and Evil) by Cicero, written in 45 BC.)
 				</p>
 
-				<div className='relative max-w-screen-md mx-auto h-[250px] md:h-[200px] w-full bg-[#F4F8FF] text-black rounded text-lg md:text-2xl grid place-items-center text-center leading-normal font-bold'>
+				<div className='relative max-w-screen-md mx-auto h-[250px] md:h-[200px] w-full bg-[#F4F8FF] text-black rounded text-lg md:text-2xl grid place-items-center text-center leading-normal font-bold px-5 md:px-0'>
 					<div className='grid gap-y-2.5 md:gap-y-5'>
 						<div>
 							El diseño no es solo cómo se ve y se siente.
