@@ -75,7 +75,7 @@ const Layout = ({ children }) => {
 					</header>
 				</header>
 
-				<header className='w-full flex px-5 py-5 shadow items-center justify-between md:hidden'>
+				<header className='w-full flex px-5 py-5 shadow items-center justify-between md:hidden bg-white z-[100]'>
 					<div className='relative'>
 						<Drawer />
 					</div>
