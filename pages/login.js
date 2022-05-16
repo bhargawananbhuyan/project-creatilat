@@ -4,14 +4,22 @@ import SEO from '../src/components/layout/SEO'
 import LoginForm from '../src/components/auth/LoginForm'
 import RegisterForm from '../src/components/auth/RegisterForm'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 export default function Login() {
 	const [active, setActive] = React.useState(1)
+	const router = useRouter()
+
+	React.useEffect(() => {
+		if (window?.localStorage.getItem('user_data')) {
+			router.replace('/')
+		}
+	}, [])
 
 	return (
 		<Layout>
 			<SEO title='Iniciar Sesión' />
-			<article className='grid md:grid-cols-2 gap-x-20'>
+			<article className='grid justify-items-center md:justify-items-stretch md:grid-cols-2 gap-x-20'>
 				<div className='md:hidden'>
 					<Image
 						src={`/assets/${active === 1 ? 'login' : 'register'}-1.jpg`}

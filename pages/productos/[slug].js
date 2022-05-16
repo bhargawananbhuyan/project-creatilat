@@ -101,7 +101,7 @@ export default function Slug({ productos, producto }) {
 									</div>
 								</div>
 
-								<div className='max-w-md w-full h-[350px] bg-white justify-self-end p-5 shadow-xl'>
+								<div className='max-w-md mx-auto md:mx-0 w-full h-[350px] bg-white justify-self-end p-5 shadow-xl'>
 									<SingleCarousel
 										images={Array.from(Array(4).keys()).map(
 											() => producto?.images[1]
@@ -164,7 +164,48 @@ export default function Slug({ productos, producto }) {
 													: `$${_item.value}`}
 											</h3>
 											<div className='px-3.5 border-t-2 pt-5'>
-												<button className='bg-black w-full py-2.5 px-5 text-white rounded-full font-semibold shadow-xl hover:shadow-none transition-all'>
+												<button
+													className='bg-black w-full py-2.5 px-5 text-white rounded-full font-semibold shadow-xl hover:shadow-none transition-all'
+													onClick={() => {
+														if (window !== undefined) {
+															if (
+																!window.localStorage.getItem(
+																	'user_data'
+																)
+															) {
+																router.replace('/login')
+																return
+															}
+
+															if (_item.value !== 'Contáctanos') {
+																const cartItems =
+																	window?.localStorage.getItem(
+																		'cart_items'
+																	)
+																if (!cartItems) {
+																	window?.localStorage.setItem(
+																		'cart_items',
+																		JSON.stringify([_item.uuid])
+																	)
+																} else if (
+																	!JSON.parse(cartItems).includes(
+																		_item.uuid
+																	)
+																) {
+																	window?.localStorage.setItem(
+																		'cart_items',
+																		JSON.stringify([
+																			_item.uuid,
+																			...JSON.parse(
+																				cartItems
+																			),
+																		])
+																	)
+																}
+															}
+														}
+													}}
+												>
 													{_item.value === 'Contáctanos'
 														? 'Contáctanos'
 														: 'Comprar'}

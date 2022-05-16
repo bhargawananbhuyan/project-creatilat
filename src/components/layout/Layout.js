@@ -14,6 +14,29 @@ import React from 'react'
 import Drawer from './Drawer'
 
 const Layout = ({ children }) => {
+	const [user, setUser] = React.useState(null)
+	const [cart, setCart] = React.useState(null)
+
+	React.useEffect(() => {
+		if (window !== undefined && window?.localStorage.getItem('user_data')) {
+			setUser(JSON.parse(window?.localStorage.getItem('user_data')))
+		}
+		if (window !== undefined && window?.localStorage.getItem('cart_items')) {
+			setCart(JSON.parse(window?.localStorage.getItem('cart_items')))
+		}
+	}, [])
+
+	const handleLogout = () => {
+		if (window !== undefined && window?.localStorage.getItem('user_data')) {
+			setUser(null)
+			window?.localStorage.removeItem('user_data')
+		}
+		if (window !== undefined && window?.localStorage.getItem('cart_items')) {
+			window?.localStorage.removeItem('cart_items')
+			setCart(null)
+		}
+	}
+
 	return (
 		<div className='w-screen'>
 			<>
@@ -62,15 +85,30 @@ const Layout = ({ children }) => {
 						</div>
 
 						<div className='justify-self-end flex items-center gap-x-8'>
-							<Link href={'/registro-de-pago/2'}>
-								<a className='text-lg'>
-									<FontAwesomeIcon icon={faCartShopping} />
-								</a>
-							</Link>
-
-							<Link href='/login'>
-								<a>Iniciar sesion</a>
-							</Link>
+							{user ? (
+								<div className='flex items-center gap-x-5'>
+									<div className='relative'>
+										<Link href={'/registro-de-pago/2'}>
+											<a className='text-lg'>
+												<FontAwesomeIcon icon={faCartShopping} />
+											</a>
+										</Link>
+										{cart && (
+											<span className='absolute bg-green-500 h-[18px] w-[18px] text-[12px] grid place-items-center -top-2.5 -right-2.5 font-bold text-white'>
+												{cart.length}
+											</span>
+										)}
+									</div>
+									<span>hello, {user.UserName}</span>
+									<button onClick={handleLogout} className='relative'>
+										Log out
+									</button>
+								</div>
+							) : (
+								<Link href='/login'>
+									<a>Iniciar sesion</a>
+								</Link>
+							)}
 						</div>
 					</header>
 				</header>
