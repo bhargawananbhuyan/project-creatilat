@@ -11,6 +11,7 @@ import ProductosHeader from '../../src/components/productos/ProductosHeader'
 import ProductosSubHeader from '../../src/components/productos/ProductosSubHeader'
 import { productos as _productos } from '../../src/utils/data'
 import makeLink from '../../src/utils/makeLink'
+import Link from 'next/link'
 
 const titleRoutes = [
 	'logo-e-identidad',
@@ -52,6 +53,65 @@ export default function Slug({ productos, producto }) {
 	const { slug } = router.query
 	const isRoute = (title) => title?.toLowerCase().split(' ').join('-') === slug
 	const _pageTitle = slug?.split('-').join(' ')
+
+	const addToCart = (value, uuid) => {
+		if (window !== undefined) {
+			if (!window.localStorage.getItem('user_data')) {
+				router.replace('/login')
+				return
+			}
+
+			if (value !== 'Contáctanos') {
+				const cartItems = window?.localStorage.getItem('cart_items')
+				if (!cartItems) {
+					window?.localStorage.setItem(
+						'cart_items',
+						JSON.stringify([
+							{
+								Product: { PublicKey: uuid },
+								Quantity: 1,
+							},
+						])
+					)
+					console.log(cartItems)
+				} else if (
+					JSON.parse(cartItems).filter((item) => item.Product.PublicKey === uuid)
+						.length === 0
+				) {
+					window?.localStorage.setItem(
+						'cart_items',
+						JSON.stringify([
+							{
+								Product: { PublicKey: uuid },
+								Quantity: 1,
+							},
+							...JSON.parse(cartItems),
+						])
+					)
+				} else if (
+					JSON.parse(cartItems).filter((item) => item.Product.PublicKey === uuid).length >
+					0
+				) {
+					window?.localStorage.setItem(
+						'cart_items',
+						JSON.stringify([
+							{
+								Product: { PublicKey: uuid },
+								Quantity: (JSON.parse(cartItems).filter(
+									(item) => item.Product.PublicKey === uuid
+								)[0].Quantity += 1),
+							},
+							...JSON.parse(cartItems).filter(
+								(item) => item.Product.PublicKey !== uuid
+							),
+						])
+					)
+				}
+			} else {
+				router.replace('/contacto')
+			}
+		}
+	}
 
 	return (
 		<Layout>
@@ -97,9 +157,13 @@ export default function Slug({ productos, producto }) {
 										<button className='bg-gradient-to-r from-[#881CFD] to-[#A514CD] px-7 py-3.5 font-semibold text-white rounded-full'>
 											Comenzar
 										</button>
-										<button className='border-2 border-[#A215D1] px-7 py-3.5 font-semibold text-[#A215D1] rounded-full'>
-											Cómo funciona
-										</button>
+										<Link href='/como-funciona'>
+											<a>
+												<button className='border-2 border-[#A215D1] px-7 py-3.5 font-semibold text-[#A215D1] rounded-full'>
+													Cómo funciona
+												</button>
+											</a>
+										</Link>
 									</div>
 								</div>
 
@@ -167,46 +231,10 @@ export default function Slug({ productos, producto }) {
 											</h3>
 											<div className='px-3.5 border-t-2 pt-5'>
 												<button
-													className='bg-black w-full py-2.5 px-5 text-white rounded-full font-semibold shadow-xl hover:shadow-none transition-all'
-													onClick={() => {
-														if (window !== undefined) {
-															if (
-																!window.localStorage.getItem(
-																	'user_data'
-																)
-															) {
-																router.replace('/login')
-																return
-															}
-
-															if (_item.value !== 'Contáctanos') {
-																const cartItems =
-																	window?.localStorage.getItem(
-																		'cart_items'
-																	)
-																if (!cartItems) {
-																	window?.localStorage.setItem(
-																		'cart_items',
-																		JSON.stringify([_item.uuid])
-																	)
-																} else if (
-																	!JSON.parse(cartItems).includes(
-																		_item.uuid
-																	)
-																) {
-																	window?.localStorage.setItem(
-																		'cart_items',
-																		JSON.stringify([
-																			_item.uuid,
-																			...JSON.parse(
-																				cartItems
-																			),
-																		])
-																	)
-																}
-															}
-														}
-													}}
+													className='bg-black w-full py-2.5 px-5 text-white rounded-full font-semibold shadow-xl hover:shadow-none transition-all border-2 border-white'
+													onClick={() =>
+														addToCart(_item.value, _item.uuid)
+													}
 												>
 													{_item.value === 'Contáctanos'
 														? 'Contáctanos'

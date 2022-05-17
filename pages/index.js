@@ -1,6 +1,7 @@
 import { faArrowRight, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import CircularCarousel from '../src/components/carousels/CircularCarousel'
 import MultiProductCarousel from '../src/components/carousels/MultiProductCarousel'
@@ -60,18 +61,26 @@ export default function Home() {
 										className='absolute top-[1rem] left-3.5 text-gray-400'
 									/>
 								</div>
-								<button
-									className={`${introColor.bg} transition-colors px-14 py-2.5 text-white rounded-full shadow-xl hover:shadow-none border-2 border-white`}
-								>
-									Buscar
-								</button>
+								<Link href='/paquetes'>
+									<a>
+										<button
+											className={`${introColor.bg} transition-colors px-14 py-2.5 text-white rounded-full shadow-xl hover:shadow-none border-2 border-white`}
+										>
+											Buscar
+										</button>
+									</a>
+								</Link>
 							</section>
 						</section>
 					</div>
 
 					<div className='mt-20 md:mt-32'>
 						<div className='flex items-center justify-end gap-3.5 px-5 mb-5 text-blue-500 font-semibold'>
-							<h1 className='mb-1'>Ver más</h1>
+							<Link href='/paquetes'>
+								<a>
+									<h1 className='mb-1'>Ver más</h1>
+								</a>
+							</Link>
 							<FontAwesomeIcon icon={faArrowRight} />
 						</div>
 						<MultiProductCarousel />
@@ -107,11 +116,15 @@ export default function Home() {
 							</div>
 						</section>
 
-						<div className='px-5 grid place-items-center mt-10'>
-							<button className='bg-yellow-500 text-white font-semibold py-3.5 md:max-w-[450px] md:w-full px-10 md:px-5 rounded-full shadow-xl hover:shadow-none border-2 border-white'>
-								Contáctanos
-							</button>
-						</div>
+						<Link href='/contacto'>
+							<a>
+								<div className='px-5 grid place-items-center mt-10'>
+									<button className='bg-yellow-500 text-white font-semibold py-3.5 md:max-w-[450px] md:w-full px-10 md:px-5 rounded-full shadow-xl hover:shadow-none border-2 border-white'>
+										Contáctanos
+									</button>
+								</div>
+							</a>
+						</Link>
 					</div>
 
 					<article

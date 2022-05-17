@@ -139,14 +139,15 @@ export default function Contacto() {
 											value={formData.telefono}
 											onChange={handleChange}
 										/>
-										<InputField
-											placeholder='Nombre de la empresa'
-											additionalClasses='col-span-2'
-											name='nombreEmpresa'
-											required
-											value={formData.nombreEmpresa}
-											onChange={handleChange}
-										/>
+										<div className='col-span-2'>
+											<InputField
+												placeholder='Nombre de la empresa'
+												name='nombreEmpresa'
+												required
+												value={formData.nombreEmpresa}
+												onChange={handleChange}
+											/>
+										</div>
 									</div>
 								</div>
 								<div className='grid gap-3.5'>

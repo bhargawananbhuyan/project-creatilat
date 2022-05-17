@@ -40,16 +40,16 @@ export default function ProductosHeader({ isRoute }) {
 						<div className='relative h-[120px]'>
 							<section
 								key={i}
-								className='grid place-items-center max-w-[125px] text-center gap-3.5'
+								className='grid place-items-center max-w-[100px] text-center gap-3.5'
 							>
 								<div
-									className={`h-[32px] w-[32px] md:h-[60px] md:w-[60px] ${
+									className={`h-[32px] w-[32px] md:h-[45px] md:w-[45px] ${
 										isRoute(item.label)
 											? 'bg-white bg-opacity-75'
 											: 'bg-blue-800 bg-opacity-25'
 									} rounded-full grid place-items-center`}
 								>
-									<div className='w-[18px] h-[18px] md:w-[24px] md:h-[24px] relative'>
+									<div className='w-[18px] h-[18px] md:w-[21px] md:h-[21px] relative'>
 										<Image
 											src={`/assets/${
 												isRoute(item.label) ? item.icon2 : item.icon1

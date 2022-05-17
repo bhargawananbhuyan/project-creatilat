@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
 			<>
 				<header className='fixed left-0 top-0 w-screen bg-white hidden md:flex flex-col z-[100]'>
 					<div className='max-w-screen-xl w-full mx-auto pt-6 pb-2.5'>
-						<header className='flex justify-end gap-10'>
+						<header className='flex justify-end gap-10 text-gray-400'>
 							<div className='flex items-center gap-2.5'>
 								<FontAwesomeIcon icon={faPhone} className='text-sm' />
 								<span>555 555 5555</span>

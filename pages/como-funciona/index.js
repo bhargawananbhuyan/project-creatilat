@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../../src/components/layout/Layout'
 import SEO from '../../src/components/layout/SEO'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const content1 = [
 	{
@@ -188,17 +189,21 @@ const Index = () => {
 			<div className='max-w-screen-xl mx-auto grid place-items-center gap-y-5 pb-14'>
 				<div className='max-w-sm w-full'>
 					{active === 0 ? (
-						<button className='bg-black text-white w-full py-2.5 font-semibold rounded-full'>
-							Productos
-						</button>
+						<Link href='/productos'>
+							<a className='bg-black grid place-items-center border-2 border-white shadow-xl hover:shadow-none text-white w-full py-2.5 font-semibold rounded-full'>
+								Productos
+							</a>
+						</Link>
 					) : (
 						<div className='grid gap-2.5'>
 							<button className='bg-black border-2 border-black text-white w-full py-2.5 font-semibold rounded-full'>
 								Comienza tu proyecto
 							</button>
-							<button className='border-2 border-black w-full py-2.5 font-semibold rounded-full'>
-								Productos
-							</button>
+							<Link href='/productos'>
+								<a className='border-2 grid place-items-center border-black w-full py-2.5 font-semibold rounded-full'>
+									Productos
+								</a>
+							</Link>
 						</div>
 					)}
 				</div>

@@ -5,6 +5,8 @@ import Layout from '../../src/components/layout/Layout'
 import SEO from '../../src/components/layout/SEO'
 import InputField from '../../src/components/layout/InputField'
 import Image from 'next/image'
+import { apiService } from '../../src/utils/constants'
+import Link from 'next/link'
 
 const Stepper = ({ titles, active, done, setActive, setDone }) => {
 	return (
@@ -54,6 +56,35 @@ const Cart = () => {
 	const [cantidad, setCantidad] = React.useState(1)
 	const [paymentType, setPaymentType] = React.useState(0)
 	const [loading, _] = React.useState(false)
+
+	const [products, setProducts] = React.useState([])
+
+	React.useEffect(() => {
+		if (window !== undefined) {
+			setProducts(JSON.parse(window?.localStorage.getItem('cart_items')))
+		}
+	}, [])
+
+	const handleCheckout = async () => {
+		if (window !== undefined && window?.localStorage.getItem('cart_items')) {
+			try {
+				const res = await apiService.post(
+					'/Order/Create',
+					{ Items: products },
+					{
+						headers: {
+							Authorization: `Bearer ${
+								JSON.parse(window?.localStorage.getItem('user_data')).Token
+							}`,
+						},
+					}
+				)
+				console.log(res.data)
+			} catch (error) {
+				console.log(error)
+			}
+		}
+	}
 
 	return (
 		<Layout>
@@ -251,7 +282,10 @@ const Cart = () => {
 													</span>
 												</h2>
 												<div className='grid place-items-center mt-5'>
-													<button className='bg-black text-white font-semibold px-14 py-2.5 rounded-full'>
+													<button
+														className='bg-black text-white font-semibold px-14 py-2.5 rounded-full'
+														onClick={handleCheckout}
+													>
 														Comprar
 													</button>
 												</div>
@@ -373,9 +407,13 @@ const Cart = () => {
 									alt=''
 								/>
 							</div>
-							<button className='bg-black text-white px-14 py-3.5 font-semibold rounded-full'>
-								Continuar
-							</button>
+							<Link href='/'>
+								<a>
+									<button className='bg-black text-white px-14 py-3.5 font-semibold rounded-full'>
+										Continuar
+									</button>
+								</a>
+							</Link>
 						</div>
 					)}
 				</>
