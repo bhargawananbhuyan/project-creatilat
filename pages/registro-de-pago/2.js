@@ -60,7 +60,7 @@ const Cart = () => {
 			<SEO />
 
 			{loading ? (
-				<div className='grid place-items-center pt-16 pb-32 gap-y-10'>
+				<div className='grid place-items-center mt-20 md:mt-36 pt-16 pb-32 gap-y-10'>
 					<h1 className='text-2xl md:text-4xl font-bold'>Estamos procesando tu pago</h1>
 					<div className='w-[300px] h-[200px] md:h-[300px] md:w-[450px] relative'>
 						<Image
@@ -74,7 +74,7 @@ const Cart = () => {
 			) : (
 				<>
 					{active === 0 || active === 1 ? (
-						<div className='grid md:grid-cols-2 xl:grid-cols-5'>
+						<div className='grid md:grid-cols-2 xl:grid-cols-5 mt-20 md:mt-32'>
 							<div className='xl:col-span-3 max-w-2xl w-full mx-auto py-10 md:py-20'>
 								<div className='grid place-items-center px-5'>
 									<Stepper
@@ -352,7 +352,7 @@ const Cart = () => {
 							</div>
 						</div>
 					) : (
-						<div className='max-w-screen-xl mx-auto grid place-items-center gap-y-14 pt-10 pb-20'>
+						<div className='max-w-screen-xl mx-auto grid place-items-center gap-y-14 pt-10 pb-20 mt-20 md:mt-32'>
 							<Stepper
 								titles={['Pedido', 'Pago', 'Comienza tu orden']}
 								active={active}

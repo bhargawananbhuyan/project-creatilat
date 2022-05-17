@@ -17,7 +17,7 @@ const Index = () => {
 		<Layout>
 			<SEO title='Blog' />
 
-			<article className='pt-12 md:py-16'>
+			<article className='mt-16 md:mt-32 pt-12 md:py-16'>
 				<section className='max-w-md mx-auto text-center grid gap-5 md:gap-8 px-5 md:px-0 pb-10 md:pb-0'>
 					<div>
 						<h1 className='text-4xl font-bold'>Noticias y artículos</h1>

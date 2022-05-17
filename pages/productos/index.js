@@ -17,7 +17,7 @@ export default function Index() {
 		<Layout>
 			<SEO title='Productos' />
 
-			<section className='bg-[#4384F5] grid place-items-center gap-8 md:gap-10 py-10 pb-5 md:pb-10 px-5'>
+			<section className='bg-[#4384F5] grid place-items-center gap-8 md:gap-10 py-10 pb-5 md:pb-10 px-5 mt-16 md:mt-32'>
 				<h1 className='text-2xl md:text-3xl font-bold text-white text-center md:text-left'>
 					¿Qué necesitas diseñar?
 				</h1>

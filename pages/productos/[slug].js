@@ -62,8 +62,10 @@ export default function Slug({ productos, producto }) {
 			)}
 			{titleRoutes.includes(slug) ? (
 				<>
-					<section className='bg-[#4384F5] grid place-items-center gap-10 py-10 pb-5 md:pb-10 px-5'>
-						<h1 className='text-3xl font-bold text-white'>¿Qué necesitas diseñar?</h1>
+					<section className='bg-[#4384F5] grid place-items-center gap-10 py-10 pb-5 md:pb-10 px-5 mt-16 md:mt-32'>
+						<h1 className='text-xl md:text-3xl font-bold text-white'>
+							¿Qué necesitas diseñar?
+						</h1>
 						<div className='max-w-lg w-full'>
 							<InputField
 								placeholder='Logotipo, empaque, ilustraciones…'
@@ -82,7 +84,7 @@ export default function Slug({ productos, producto }) {
 			) : (
 				!router.isFallback && (
 					<>
-						<div className='bg-[#f8f8f8] py-14'>
+						<div className='bg-[#f8f8f8] py-14 mt-16 md:mt-32'>
 							<section className='max-w-screen-xl mx-auto grid px-5 md:grid-cols-2 gap-y-10 items-center'>
 								<div className='grid gap-10 place-items-center md:place-items-start text-center md:text-left'>
 									<section className='grid gap-5'>

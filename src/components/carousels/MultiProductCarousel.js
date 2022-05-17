@@ -8,7 +8,7 @@ function MultiProductCarousel() {
 	const [carouselRef, embla] = useEmblaCarousel({
 		loop: true,
 		slidesToScroll: 1,
-		align: 'start',
+		align: 'center',
 	})
 	const [scrollSnaps, setScrollSnaps] = React.useState([])
 	const [selectedIndex, setSelectedIndex] = React.useState(0)
@@ -44,15 +44,15 @@ function MultiProductCarousel() {
 
 	return (
 		<div className='grid gap-y-10 px-10 sm:px-0'>
-			<div className='absolute items-center left-0 w-full h-[420px] flex justify-between'>
+			<div className='absolute items-center left-0 w-full h-[420px] md:h-[350px] flex justify-between'>
 				<button
-					className='h-[48px] w-[48px] bg-green-600 text-white z-[100] cursor-pointer'
+					className='h-[48px] w-[48px] bg-[#0B864F] text-white z-[50] cursor-pointer'
 					onClick={handleLeftScroll}
 				>
 					<FontAwesomeIcon icon={faArrowLeft} />
 				</button>
 				<button
-					className='h-[48px] w-[48px] bg-green-600 text-white z-[100] cursor-pointer'
+					className='h-[48px] w-[48px] bg-[#0B864F] text-white z-[50] cursor-pointer'
 					onClick={handleRightScroll}
 				>
 					<FontAwesomeIcon icon={faArrowRight} />
@@ -65,30 +65,40 @@ function MultiProductCarousel() {
 						{
 							label: 'Logotipos',
 							color: 'bg-[#575757] text-white',
+							img: 1,
 						},
 						{
 							label: 'Flyers',
 							color: 'bg-[#0080C7] text-white',
+							img: 2,
 						},
 						{
 							label: 'Menús',
 							color: 'bg-[#bb071b] text-white',
+							img: 3,
 						},
 						{
 							label: 'Empaque',
 							color: 'bg-[#73b509] text-white',
+							img: 4,
 						},
 						{
 							label: 'Portada de libros',
 							color: 'bg-[#fff] text-black',
+							img: 5,
+						},
+						{
+							label: 'Empaque',
+							color: 'bg-[#73b509] text-white',
+							img: 4,
 						},
 					].map((item, i) => (
 						<div
 							key={i}
-							className='h-[420px] bg-gray-100 flex-shrink-0 relative mr-10 flex-[0_0_100%] sm:flex-[0_0_25%]'
+							className='h-[420px] md:h-[350px] bg-gray-100 flex-shrink-0 relative mr-10 flex-[0_0_250px] sm:flex-[0_0_225px]'
 						>
 							<Image
-								src={`/assets/slide-${i + 1}.jpg`}
+								src={`/assets/slide-${item.img}.jpg`}
 								layout='fill'
 								className='object-cover'
 								alt={item.label}

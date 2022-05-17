@@ -72,7 +72,7 @@ export default function Contacto() {
 		<>
 			<Layout>
 				<SEO title='Contacto' />
-				<div className='bg-gray-300 pb-14 md:py-0 md:bg-white'>
+				<div className='pb-5 md:py-0 md:bg-white mt-20 md:mt-36'>
 					<div className='max-w-screen-xl mx-auto bg-white'>
 						<div className='grid md:grid-cols-2 gap-16 py-10 items-center'>
 							<div className='md:grid gap-10 hidden'>
@@ -172,7 +172,7 @@ export default function Contacto() {
 								/>
 							</form>
 						</div>
-						<section className='grid grid-cols-3 gap-5 md:gap-0 place-items-center px-5 md:px-0 pb-10 md:pb-16'>
+						<section className='flex md:grid grid-cols-3 gap-5 md:gap-0 place-items-center px-5 md:px-0 pb-10 md:pb-16'>
 							{[
 								{
 									img: '',

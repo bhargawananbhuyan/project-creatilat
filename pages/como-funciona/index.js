@@ -67,13 +67,13 @@ const Index = () => {
 		<Layout>
 			<SEO title='Como funciona' />
 
-			<div className='max-w-screen-xl mx-auto relative px-5 md:px-0'>
+			<div className='mt-32 md:mt-44 max-w-screen-xl mx-auto relative px-5 md:px-0'>
 				<h1 className='text-2xl md:text-5xl text-center font-extrabold mt-12 md:mt-5 mb-10 text-gray-600'>
 					Como funciona
 				</h1>
 				<div className='max-w-md mx-auto grid grid-cols-2'>
 					<button
-						className={`font-semibold py-2.5 border border-black ${
+						className={`text-sm md:text-base font-semibold py-2.5 border border-black ${
 							active === 0 ? 'bg-black text-white' : ''
 						}`}
 						onClick={() => setActive(0)}
@@ -81,7 +81,7 @@ const Index = () => {
 						Productos y paquetes
 					</button>
 					<button
-						className={`font-semibold py-2.5 border border-black ${
+						className={`text-sm md:text-base font-semibold py-2.5 border border-black ${
 							active === 1 ? 'bg-black text-white' : ''
 						}`}
 						onClick={() => setActive(1)}

@@ -9,7 +9,7 @@ export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Preguntas Frecuentes' />
-			<div className='max-w-screen-lg mx-auto'>
+			<div className='mt-20 md:mt-40 max-w-screen-lg mx-auto'>
 				<div className='grid md:grid-cols-2 gap-10 pt-8 pb-20 items-center'>
 					<div className='grid gap-10 place-items-center md:place-items-start'>
 						<section className='max-w-xl grid gap-5'>

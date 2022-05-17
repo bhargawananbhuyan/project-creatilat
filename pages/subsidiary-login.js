@@ -11,7 +11,7 @@ export default function SubsidiaryLogin() {
 	return (
 		<Layout>
 			<SEO title='Iniciar Sesión' />
-			<article className='grid md:grid-cols-2 gap-x-20'>
+			<article className='mt-20 md:mt-32 grid md:grid-cols-2 gap-x-20'>
 				<div className='md:hidden'>
 					<Image
 						src={`/assets/${active === 1 ? 'envases' : 'embalaje'}.jpg`}
@@ -31,7 +31,7 @@ export default function SubsidiaryLogin() {
 						/>
 					</div>
 				</section>
-				<div className='z-[100]'>
+				<div className='z-[50]'>
 					{active === 1 ? (
 						<LoginForm
 							active={active}

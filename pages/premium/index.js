@@ -13,10 +13,10 @@ const Index = () => {
 		<Layout>
 			<SEO title='Premium' />
 
-			<div className='grid place-items-center bg-black text-white py-14'>
+			<div className='mt-20 md:mt-32 grid place-items-center bg-black text-white py-14'>
 				<section className='grid gap-2.5'>
 					<h1 className='text-4xl md:text-6xl font-bold'>Premium.</h1>
-					<h2 className='bg-white text-black justify-self-end pl-2.5 pr-8 text-base md:text-xl -mr-5 font-semibold'>
+					<h2 className='bg-white text-black justify-self-end px-2.5 text-base md:text-xl -mr-5 font-semibold'>
 						Pro
 					</h2>
 				</section>
@@ -44,7 +44,7 @@ const Index = () => {
 								/>
 								<Title text={'Los mejores diseñadores con experiencia'} img={5} />
 							</div>
-							<button className='md:ml-5 mt-5 bg-[#5544C5] text-white font-semibold px-16 py-2.5 rounded-full md:justify-self-start shadow-xl hover:shadow-none transition-all'>
+							<button className='border-2 border-white md:ml-5 mt-5 bg-[#5544C5] text-white font-semibold px-16 py-2.5 rounded-full md:justify-self-start shadow-xl hover:shadow-none transition-all'>
 								Contáctanos
 							</button>
 							<div className='md:ml-14 text-2xl text-[#5544C5] flex gap-10 mt-3.5'>
@@ -76,7 +76,7 @@ const Index = () => {
 						</p>
 					</div>
 					<div className='mt-8 md:mt-0 md:justify-self-end'>
-						<button className='py-2.5 px-8 bg-[#5544C5] text-white rounded-full shadow-xl hover:shadow-none transition-all'>
+						<button className='py-2.5 px-8 bg-[#5544C5] border-2 border-white text-white rounded-full shadow-xl hover:shadow-none transition-all'>
 							Habla con nosotros
 						</button>
 					</div>

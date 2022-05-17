@@ -40,80 +40,82 @@ const Layout = ({ children }) => {
 	return (
 		<div className='w-screen'>
 			<>
-				<header className='hidden px-5 md:flex flex-col max-w-screen-xl mx-auto py-8'>
-					<header className='flex justify-end gap-10'>
-						<div className='flex items-center gap-2.5'>
-							<FontAwesomeIcon icon={faPhone} className='text-sm' />
-							<span>555 555 5555</span>
-						</div>
-						<div className='flex items-center gap-2.5'>
-							<FontAwesomeIcon icon={faWhatsapp} className='text-xl' />
-							<span>555 555 5555</span>
-						</div>
-					</header>
+				<header className='fixed left-0 top-0 w-screen bg-white hidden md:flex flex-col z-[100]'>
+					<div className='max-w-screen-xl w-full mx-auto pt-6 pb-2.5'>
+						<header className='flex justify-end gap-10'>
+							<div className='flex items-center gap-2.5'>
+								<FontAwesomeIcon icon={faPhone} className='text-sm' />
+								<span>555 555 5555</span>
+							</div>
+							<div className='flex items-center gap-2.5'>
+								<FontAwesomeIcon icon={faWhatsapp} className='text-xl' />
+								<span>555 555 5555</span>
+							</div>
+						</header>
 
-					<header className='flex items-center justify-between py-3.5'>
-						<div className='flex items-center gap-20'>
-							<Link href='/'>
-								<a className='w-[150px] h-[60px] relative'>
-									<Image
-										src={'/assets/logo.png'}
-										layout='fill'
-										className='absolute object-contain'
-										alt=''
-									/>
-								</a>
-							</Link>
-							{/* desktop navigation */}
-							<nav className='flex gap-10 font-semibold'>
-								<Link href='/productos'>
-									<a>Productos</a>
+						<header className='flex items-center justify-between mt-2.5'>
+							<div className='flex items-center gap-20'>
+								<Link href='/'>
+									<a className='w-[150px] h-[60px] relative'>
+										<Image
+											src={'/assets/logo.png'}
+											layout='fill'
+											className='absolute object-contain'
+											alt=''
+										/>
+									</a>
 								</Link>
-								<Link href='/paquetes'>
-									<a>Paquetes</a>
-								</Link>
-								<Link href='/premium'>
-									<a>Premium</a>
-								</Link>
-								<Link href='/como-funciona'>
-									<a>Como funciona</a>
-								</Link>
-								<Link href='/contacto'>
-									<a>Contacto</a>
-								</Link>
-							</nav>
-						</div>
+								{/* desktop navigation */}
+								<nav className='flex gap-x-10 font-semibold'>
+									<Link href='/productos'>
+										<a>Productos</a>
+									</Link>
+									<Link href='/paquetes'>
+										<a>Paquetes</a>
+									</Link>
+									<Link href='/premium'>
+										<a>Premium</a>
+									</Link>
+									<Link href='/como-funciona'>
+										<a>Como funciona</a>
+									</Link>
+									<Link href='/contacto'>
+										<a>Contacto</a>
+									</Link>
+								</nav>
+							</div>
 
-						<div className='justify-self-end flex items-center gap-x-8'>
-							{user ? (
-								<div className='flex items-center gap-x-5'>
-									<div className='relative'>
-										<Link href={'/registro-de-pago/2'}>
-											<a className='text-lg'>
-												<FontAwesomeIcon icon={faCartShopping} />
-											</a>
-										</Link>
-										{cart && (
-											<span className='absolute bg-green-500 h-[18px] w-[18px] text-[12px] grid place-items-center -top-2.5 -right-2.5 font-bold text-white'>
-												{cart.length}
-											</span>
-										)}
+							<div className='justify-self-end flex items-center gap-x-8'>
+								{user ? (
+									<div className='flex items-center gap-x-5'>
+										<div className='relative'>
+											<Link href={'/registro-de-pago/2'}>
+												<a className='text-lg'>
+													<FontAwesomeIcon icon={faCartShopping} />
+												</a>
+											</Link>
+											{cart && (
+												<span className='absolute bg-green-500 h-[18px] w-[18px] text-[12px] grid place-items-center -top-2.5 -right-2.5 font-bold text-white'>
+													{cart.length}
+												</span>
+											)}
+										</div>
+										<span>hello, {user.UserName}</span>
+										<button onClick={handleLogout} className='relative'>
+											Log out
+										</button>
 									</div>
-									<span>hello, {user.UserName}</span>
-									<button onClick={handleLogout} className='relative'>
-										Log out
-									</button>
-								</div>
-							) : (
-								<Link href='/login'>
-									<a>Iniciar sesion</a>
-								</Link>
-							)}
-						</div>
-					</header>
+								) : (
+									<Link href='/login'>
+										<a>Iniciar sesion</a>
+									</Link>
+								)}
+							</div>
+						</header>
+					</div>
 				</header>
 
-				<header className='w-full flex px-5 py-5 shadow items-center justify-between md:hidden bg-white z-[100]'>
+				<header className='fixed top-0 left-0 w-full flex px-5 py-5 shadow items-center justify-between md:hidden bg-white z-[100]'>
 					<div className='relative'>
 						<Drawer />
 					</div>

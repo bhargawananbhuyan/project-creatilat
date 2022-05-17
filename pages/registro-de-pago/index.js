@@ -11,8 +11,8 @@ export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Registro de Pago' />
-			<article className='grid md:grid-cols-2 gap-x-20'>
-				<div className='max-w-screen-sm mx-auto md:pl-8 z-[100]'>
+			<article className='grid md:grid-cols-2 gap-x-20 mt-16 md:mt-32'>
+				<div className='max-w-screen-sm mx-auto md:pl-8 z-[50]'>
 					{active === 1 ? (
 						<LoginForm active={active} setActive={setActive} />
 					) : (

@@ -4,13 +4,14 @@ import React from 'react'
 import Layout from '../../src/components/layout/Layout'
 import SEO from '../../src/components/layout/SEO'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Index = () => {
 	return (
 		<Layout>
 			<SEO title='Paquetes' />
 
-			<article className='max-w-screen-xl mx-auto px-5'>
+			<article className='mt-32 md:mt-44 max-w-screen-xl mx-auto px-5'>
 				<section className='grid place-items-center gap-y-3.5 text-center md:text-left mt-10'>
 					<h1 className='text-2xl md:text-4xl font-bold'>El paquete que buscabas</h1>
 					<p>Encuentra el paquete que se ajusta a tus necesidades.</p>
@@ -77,9 +78,11 @@ const Index = () => {
 									<span>Entregables AI/EPS/PDF/JPEG/PNG</span>
 								</div>
 							</div>
-							<button className='bg-black w-full text-white py-2.5 rounded-full mt-5 font-semibold'>
-								Comprar
-							</button>
+							<Link href='/registro-de-pago'>
+								<a className='bg-black shadow-xl grid place-items-center border-2 hover:shadow-none border-white w-full text-white py-2.5 rounded-full mt-5 font-semibold'>
+									Comprar
+								</a>
+							</Link>
 						</section>
 					))}
 				</div>

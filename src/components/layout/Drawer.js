@@ -21,7 +21,7 @@ const Drawer = () => {
 				leaveFrom='transform top-[4.5rem]'
 				leaveTo='transform top-[-100vh]'
 			>
-				<Menu.Items className='fixed bg-white shadow-xl left-0 py-3.5 w-screen grid place-items z-[200]'>
+				<Menu.Items className='fixed top-[4.35rem] bg-white shadow-xl left-0 py-3.5 w-screen grid place-items z-[200]'>
 					{[
 						{
 							title: 'Home',

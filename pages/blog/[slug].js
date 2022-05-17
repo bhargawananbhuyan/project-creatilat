@@ -22,7 +22,7 @@ const Blog = () => {
 		<Layout>
 			<SEO title={`Blogs | ${slug}`} />
 
-			<article className='grid gap-y-10 md:gap-y-14 text-[#77838F]'>
+			<article className='mt-16 md:mt-32 grid gap-y-10 md:gap-y-14 text-[#77838F]'>
 				<div className='h-[200px] md:h-[350px] w-full bg-gray-200 relative'>
 					<Image
 						src={'/assets/blog/banner-1.png'}
@@ -31,6 +31,7 @@ const Blog = () => {
 						alt=''
 					/>
 				</div>
+				``
 				<div className='max-w-screen-md mx-auto grid gap-y-14 px-5 md:px-0'>
 					<section className='grid place-items-center text-center gap-y-3.5'>
 						<h1 className='text-3xl font-semibold text-black'>Título del Blog</h1>
@@ -73,7 +74,6 @@ const Blog = () => {
 						</section>
 					</section>
 				</div>
-
 				<p className='max-w-screen-md mx-auto leading-relaxed px-5'>
 					It has survived not only five centuries, but also the leap into electronic
 					typesetting, remaining essentially unchanged. It was popularised in the 1960s
@@ -81,7 +81,6 @@ const Blog = () => {
 					recently with desktop publishing software like Aldus PageMaker including
 					versions of Lorem Ipsum.
 				</p>
-
 				<div className='h-[200px] md:h-[300px] bg-gray-200 max-w-screen-lg w-full mx-auto relative'>
 					<Image
 						src={'/assets/blog/banner-2.png'}
@@ -90,7 +89,6 @@ const Blog = () => {
 						alt=''
 					/>
 				</div>
-
 				<p className='max-w-screen-md mx-auto leading-relaxed px-5'>
 					Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
 					in a piece of classical Latin literature from 45 BC, making it over 2000 years
@@ -101,7 +99,6 @@ const Blog = () => {
 					1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes
 					of Good and Evil) by Cicero, written in 45 BC.)
 				</p>
-
 				<div className='relative max-w-screen-md mx-auto h-[250px] md:h-[200px] w-full bg-[#F4F8FF] text-black rounded text-lg md:text-2xl grid place-items-center text-center leading-normal font-bold px-5 md:px-0'>
 					<div className='grid gap-y-2.5 md:gap-y-5'>
 						<div>
@@ -121,7 +118,6 @@ const Blog = () => {
 						/>
 					</div>
 				</div>
-
 				<section className='max-w-screen-md mx-auto leading-relaxed px-5 md:px-0'>
 					<h2 className='text-2xl text-black font-semibold mb-3.5'>
 						Subtítulo del artículo
@@ -144,7 +140,6 @@ const Blog = () => {
 						</li>
 					</ul>
 				</section>
-
 				<div className='h-[300px] bg-gray-200 max-w-screen-lg w-full mx-auto relative'>
 					<Image
 						src={'/assets/blog/banner-3.png'}
@@ -153,13 +148,11 @@ const Blog = () => {
 						alt=''
 					/>
 				</div>
-
 				<p className='max-w-screen-md mx-auto px-5 md:px-0'>
 					There are many variations of passages of Lorem Ipsum available, but the majority
 					have suffered alteration in some form, by injected humour, or randomised words
 					which don&apos;t look even slightly believable.
 				</p>
-
 				<div className='max-w-screen-md mx-auto grid place-items-center border-t px-5 md:px-0'>
 					<section className='max-w-lg grid gap-y-5 text-center leading-relaxed py-10'>
 						<h2 className='text-[#FF2E00] font-bold'>Comentarios</h2>
@@ -245,7 +238,6 @@ const Blog = () => {
 						))}
 					</div>
 				</div>
-
 				<form className='text-black max-w-screen-md mx-auto w-full grid gap-y-8 px-5 md:px-0'>
 					<h2 className='text-3xl font-semibold'>Comparte tu comentario</h2>
 
@@ -272,7 +264,6 @@ const Blog = () => {
 						ENVIAR
 					</button>
 				</form>
-
 				<div className='bg-[#F7FAFD] pt-20 pb-24 px-5 md:px-0'>
 					<section className='max-w-lg mx-auto text-center grid gap-y-2.5'>
 						<h2 className='text-black text-2xl'>Recibe las noticias en tu correo</h2>

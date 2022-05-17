@@ -16,7 +16,7 @@ export default function Home() {
 
 	React.useEffect(() => {
 		selectedIndex === 0
-			? setIntroColor({ text: 'text-green-500', bg: 'bg-green-500' })
+			? setIntroColor({ text: 'text-[#0B864F]', bg: 'bg-[#0B864F]' })
 			: selectedIndex === 1
 			? setIntroColor({ text: 'text-red-500', bg: 'bg-red-500' })
 			: selectedIndex === 2
@@ -28,7 +28,7 @@ export default function Home() {
 		<>
 			<SEO />
 			<Layout>
-				<div className='max-w-screen-xl mx-auto'>
+				<div className='max-w-screen-xl mx-auto mt-32 md:mt-48'>
 					<div className='flex items-center justify-center gap-y-10 md:gap-x-10 md:gap-y-0 md:justify-between flex-col-reverse md:flex-row mt-10 px-5'>
 						<CircularCarousel
 							selectedIndex={selectedIndex}
@@ -61,7 +61,7 @@ export default function Home() {
 									/>
 								</div>
 								<button
-									className={`${introColor.bg} transition-colors px-14 py-2.5 text-white rounded-full shadow-xl hover:shadow-none`}
+									className={`${introColor.bg} transition-colors px-14 py-2.5 text-white rounded-full shadow-xl hover:shadow-none border-2 border-white`}
 								>
 									Buscar
 								</button>
@@ -70,25 +70,23 @@ export default function Home() {
 					</div>
 
 					<div className='mt-20 md:mt-32'>
-						<div className='flex items-center justify-end gap-3.5 px-5 mb-5 text-blue-500'>
+						<div className='flex items-center justify-end gap-3.5 px-5 mb-5 text-blue-500 font-semibold'>
 							<h1 className='mb-1'>Ver más</h1>
 							<FontAwesomeIcon icon={faArrowRight} />
 						</div>
 						<MultiProductCarousel />
 					</div>
 
-					<div className='max-w-screen-lg mx-auto mt-32'>
+					<div className='max-w-screen-lg mx-auto mt-20 md:mt-32'>
 						<section className='grid gap-8 px-5 text-center md:text-left'>
-							<h1 className={`text-3xl md:text-5xl font-bold text-yellow-500`}>
-								Empresas
-							</h1>
+							<h1 className={`text-5xl font-bold text-yellow-500`}>Empresas</h1>
 							<p className='leading-relaxed md:leading-loose'>
 								Cuando se trata del diseño del logotipo de tu empresa y otros
-								aspectos de identidad visual, todo cuenta. Conozca a nuestro equipo
-								solicitando una consulta de marca. Determinaremos rápidamente la
-								mejor manera de ayudarlo a crear una identidad de marca visual que
-								resuene con su público y lo ayude a alcanzar sus objetivos de
-								posicionamiento.
+								aspectos de identidad visual, todo cuenta. <br /> <br /> Conozca a
+								nuestro equipo solicitando una consulta de marca. Determinaremos
+								rápidamente la mejor manera de ayudarlo a crear una identidad de
+								marca visual que resuene con su público y lo ayude a alcanzar sus
+								objetivos de posicionamiento.
 							</p>
 
 							<section className='grid gap-5'>
@@ -99,7 +97,7 @@ export default function Home() {
 								</p>
 							</section>
 
-							<div className='h-[200px] md:h-[350px] w-full bg-gray-100 relative'>
+							<div className='h-[150px] md:h-[350px] w-full bg-gray-100 relative'>
 								<Image
 									src={'/assets/homepage-2.jpg'}
 									layout='fill'
@@ -110,23 +108,23 @@ export default function Home() {
 						</section>
 
 						<div className='px-5 grid place-items-center mt-10'>
-							<button className='bg-yellow-500 text-white font-semibold py-3.5 max-w-[450px] w-full px-5 rounded-full shadow-xl hover:shadow-none'>
+							<button className='bg-yellow-500 text-white font-semibold py-3.5 md:max-w-[450px] md:w-full px-10 md:px-5 rounded-full shadow-xl hover:shadow-none border-2 border-white'>
 								Contáctanos
 							</button>
 						</div>
 					</div>
 
 					<article
-						className='my-32 flex flex-col px-5 md:grid gap-14'
+						className='my-20 md:my-32 flex flex-col px-5 md:grid gap-14'
 						style={{
 							gridTemplateColumns: 'auto 5px auto',
 						}}
 					>
 						<section
-							className='grid place-items-center gap-5'
+							className='grid place-items-center gap-8 md:gap-5'
 							style={{ gridColumn: '1' }}
 						>
-							<div className='h-[275px] w-full bg-gray-200 relative'>
+							<div className='h-[150px] md:h-[275px] w-full bg-gray-200 relative'>
 								<Image
 									src={'/assets/homepage-3.jpg'}
 									layout='fill'
@@ -135,7 +133,7 @@ export default function Home() {
 								/>
 							</div>
 							<section className='grid place-items-center max-w-xl text-center gap-5'>
-								<h5 className='text-3xl font-bold text-blue-500'>
+								<h5 className='text-xl md:text-3xl font-bold text-blue-500'>
 									Tendencias en diseño 2022
 								</h5>
 								<p>
@@ -145,7 +143,7 @@ export default function Home() {
 									of type and scrambled it to make a type specimen book. It has
 									survived not only five centuries.
 								</p>
-								<button className='px-12 py-3.5 bg-blue-500 text-white rounded-full shadow-xl hover:shadow-none mt-5 font-semibold'>
+								<button className='px-12 py-3.5 bg-blue-500 text-white rounded-full shadow-xl hover:shadow-none mt-5 font-semibold border-2 border-white'>
 									Conocer más
 								</button>
 							</section>
@@ -157,13 +155,13 @@ export default function Home() {
 						/>
 
 						<section className='grid gap-10' style={{ gridColumn: '3' }}>
-							<h1 className='text-2xl font-bold text-blue-500 ml-5'>
+							<h1 className='text-lg text-center md:text-left md:text-2xl font-bold text-blue-500 md:ml-5'>
 								Conoce nuestros tips de inspiración
 							</h1>
 							<section className='grid gap-5'>
 								{Array.from(Array(3).keys()).map((i) => (
 									<section key={i} className='flex items-center gap-5'>
-										<div className='w-[135px] md:w-[160px] h-[130px] bg-gray-200 flex-shrink-0 relative'>
+										<div className='w-[90px] md:w-[160px] h-[75px] md:h-[130px] bg-gray-200 flex-shrink-0 relative'>
 											<Image
 												src={`/assets/homepage-${i + 4}.jpg`}
 												layout='fill'
@@ -171,7 +169,7 @@ export default function Home() {
 												alt=''
 											/>
 										</div>
-										<p>
+										<p className='text-sm md:text-base'>
 											Lorem Ipsum is simply dummy text of the printing and
 											typesetting industry. Lorem Ipsum has been the
 											industry&apos;s standard dummy text ever since the
@@ -181,7 +179,7 @@ export default function Home() {
 								))}
 							</section>
 
-							<button className='py-3.5 w-full bg-blue-500 text-white rounded-full shadow-xl font-semibold hover:shadow-none'>
+							<button className='py-3.5 px-10 justify-self-center md:justify-self-stretch border-2 border-white md:w-full bg-blue-500 text-white rounded-full shadow-xl font-semibold hover:shadow-none'>
 								Llévame al blog
 							</button>
 						</section>

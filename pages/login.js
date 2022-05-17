@@ -19,7 +19,7 @@ export default function Login() {
 	return (
 		<Layout>
 			<SEO title='Iniciar Sesión' />
-			<article className='grid justify-items-center md:justify-items-stretch md:grid-cols-2 gap-x-20'>
+			<article className='mt-20 md:mt-32 grid justify-items-center md:justify-items-stretch md:grid-cols-2 gap-x-20'>
 				<div className='md:hidden'>
 					<Image
 						src={`/assets/${active === 1 ? 'login' : 'register'}-1.jpg`}
@@ -39,7 +39,7 @@ export default function Login() {
 						/>
 					</div>
 				</section>
-				<div className='z-[100]'>
+				<div className='z-[50]'>
 					{active === 1 ? (
 						<LoginForm active={active} setActive={setActive} />
 					) : (
