@@ -8,7 +8,7 @@ export default function Index() {
 	return (
 		<Layout>
 			<SEO title='Datos de facturacion' />
-			<article className='grid md:grid-cols-2 gap-x-20 mt-10 mb-20 md:m-0'>
+			<article className='mt-32 grid md:grid-cols-2 gap-x-20 mb-20 md:mb-0'>
 				<div className='md:hidden'>
 					<Image
 						src={'/assets/datos.jpg'}

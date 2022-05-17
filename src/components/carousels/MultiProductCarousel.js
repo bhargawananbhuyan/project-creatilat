@@ -43,7 +43,7 @@ function MultiProductCarousel() {
 	}, [embla, onSelect, setScrollSnaps])
 
 	return (
-		<div className='grid gap-y-10 px-10 sm:px-0'>
+		<div className='grid gap-y-10 px-14 sm:px-0'>
 			<div className='absolute items-center left-0 w-full h-[420px] md:h-[350px] flex justify-between'>
 				<button
 					className='h-[48px] w-[48px] bg-[#0B864F] text-white z-[50] cursor-pointer'

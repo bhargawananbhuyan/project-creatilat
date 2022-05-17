@@ -6,13 +6,13 @@ import Layout from '../../src/components/layout/Layout'
 export default function Index() {
 	return (
 		<Layout>
-			<div>
+			<div className='mt-16 md:mt-32'>
 				<div className='bg-gray-200'>
 					<section className='max-w-screen-xl mx-auto py-8 md:py-14 grid place-items-center text-center md:text-left gap-5 md:gap-10'>
 						<h1 className='text-2xl md:text-4xl font-extrabold'>
 							Recomienda nuestros productos y gana más.
 						</h1>
-						<button className='bg-yellow-500 text-white font-semibold px-6 py-3.5 rounded-full shadow-xl hover:shadow-none'>
+						<button className='bg-yellow-500 border-2 border-white text-white font-semibold px-6 py-3.5 rounded-full shadow-xl hover:shadow-none'>
 							Quiero afiliarme
 						</button>
 					</section>
@@ -171,7 +171,7 @@ export default function Index() {
 							¿Estas listo para ganar increíbles comisiones y ser parte de nuestros
 							afiliados?
 						</h1>
-						<button className='bg-blue-500 text-white px-14 py-3.5 rounded-full font-semibold shadow-xl hover:shadow-none'>
+						<button className='bg-blue-500 border-2 border-white text-white px-14 py-3.5 rounded-full font-semibold shadow-xl hover:shadow-none'>
 							Quiero afiliarme
 						</button>
 					</section>

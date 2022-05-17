@@ -5,10 +5,10 @@ import Image from 'next/image'
 export default function ForgotPassword() {
 	return (
 		<Layout>
-			<article className='grid grid-cols-2'>
-				<section className='max-w-md mx-auto grid gap-10 px-5 py-[150px]'>
+			<article className='mt-16 md:mt-32 grid md:grid-cols-2'>
+				<section className='bg-white mt-10 mb-20 md:my-0 md:bg-transparent max-w-md mx-auto grid gap-10 px-5 py-10 md:py-[150px]'>
 					<section className='grid gap-2.5'>
-						<h1 className='text-3xl font-bold leading-normal'>
+						<h1 className='text-2xl text-center md:text-left md:text-3xl font-bold leading-normal'>
 							¿Olvidaste tu contraseña?
 						</h1>
 						<p>Ingresa tu correo electrónico para verificar tu cuenta.</p>
@@ -26,7 +26,17 @@ export default function ForgotPassword() {
 						</div>
 					</form>
 				</section>
-				<div className='h-full w-full bg-gray-200 relative'>
+
+				<div className='md:hidden z-[-1]'>
+					<Image
+						src={'/assets/cafe.png'}
+						layout='fill'
+						className='absolute object-cover'
+						alt=''
+					/>
+				</div>
+
+				<div className='hidden md:block h-full w-full bg-gray-200 relative'>
 					<Image
 						src={'/assets/cafe.png'}
 						layout='fill'
